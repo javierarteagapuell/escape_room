@@ -43,6 +43,7 @@ function renderScene(data) {
     output.innerHTML = ''; // Limpiar anterior para esta versión (o podríamos acumular)
     // Para CYOA, a veces es mejor limpiar o dejar historial. Vamos a limpiar para estilo "pantalla de escena".
     output.appendChild(textBlock);
+    output.scrollTop = 0; // Force scroll to top for new text
 
     // 2. Generar Botones
     choicesContainer.innerHTML = '';
