@@ -1,0 +1,213 @@
+{
+    "start_node": "intro",
+    "nodes": {
+        "intro": {
+            "text": "ACTO 1: LA TUMBA DE ACERO\n\nDespiertas en la penumbra de la Sala de Mando del USS Nautilus. El aire sabe a cobre y miedo. Una alarma silenciosa baña la estancia en pulsos de luz roja.\n\nPuedes oír el gemido del casco bajo la presión abisal. La única salida es la escotilla sellada al Norte. A tu izquierda, un panel de control chisporrotea, soltando gotas de metal fundido. A tu derecha, el manual del capitán flota en un charco de agua aceitosa.",
+            "choices": [
+                {
+                    "text": "Examinar el panel de control chisporroteante.",
+                    "next": "node_panel_death"
+                },
+                {
+                    "text": "Vadear el charco para coger el manual.",
+                    "next": "node_manual_trap"
+                },
+                {
+                    "text": "Buscar en los casilleros secos de la pared trasera.",
+                    "next": "node_lockers"
+                }
+            ]
+        },
+        "node_panel_death": {
+            "text": "Te acercas al panel. Error! El suelo bajo la consola está electrificado por una fuga invisible. 400 voltios te recorren antes de que puedas gritar. Tu viaje termina en una convulsión silenciosa.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_manual_trap": {
+            "text": "Metes la mano en el agua aceitosa. Algo se mueve bajo la superficie. Una anguila robótica de mantenimiento, activada por movimiento, cierre sus mandíbulas de acero alrededor de tu brazo. El dolor es cegador, y la pérdida de sangre, fatal.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_lockers": {
+            "text": "Los casilleros están oxidados, pero uno cede. Dentro encuentras una Linterna de Iones y una Llave Maestra Magnética. Al encender la linterna, iluminas la escotilla: ves que tiene un sensor óptico sucio.",
+            "choices": [
+                {
+                    "text": "Usar la llave magnética en la ranura de la escotilla.",
+                    "next": "node_corridor_entry"
+                },
+                {
+                    "text": "Limpiar el sensor óptico con la manga.",
+                    "next": "node_hatch_jam"
+                },
+                {
+                    "text": "Golpear la puerta con la linterna para pedir ayuda.",
+                    "next": "node_noise_death"
+                }
+            ]
+        },
+        "node_hatch_jam": {
+            "text": "Limpias el sensor. La puerta intenta abrirse, pero los pernos hidráulicos están bloqueados manualmente desde fuera. Has perdido tiempo valioso y el oxígeno baja al 10%.",
+            "choices": [
+                {
+                    "text": "Usar la llave magnética ahora.",
+                    "next": "node_corridor_entry"
+                },
+                {
+                    "text": "Rendirse y esperar.",
+                    "next": "node_asphyxia"
+                }
+            ],
+            "result": "neutral"
+        },
+        "node_noise_death": {
+            "text": "El ruido reverbera por todo el submarino. Algo grande y pesado responde golpeando el casco desde FUERA. El metal se abolla, el agua entra a presión implosiva. La física hace el resto.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_asphyxia": {
+            "text": "Te sientas a esperar. La luz se desvanece. Tu visión se cierra en un túnel negro. Es una forma pacífica de irse, supongo.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_corridor_entry": {
+            "text": "ACTO 2: EL PASILLO DE LAS SOMBRAS\n\nLa escotilla se abre con un siseo. Ante ti se extiende el pasillo de ingeniería. Está inundado hasta la cintura con agua negra y helada. Un cable de alta tensión cuelga del techo, rozando peligrosamente la superficie del agua cada vez que el submarino se estremece.\n\nAl fondo, ves la luz verde del Reactor.",
+            "choices": [
+                {
+                    "text": "Caminar rápido por el agua antes de que el cable toque.",
+                    "next": "node_water_shock"
+                },
+                {
+                    "text": "Trepar por las tuberías del techo para evitar el agua.",
+                    "next": "node_pipes"
+                },
+                {
+                    "text": "Intentar apartar el cable con la linterna.",
+                    "next": "node_cable_death"
+                }
+            ]
+        },
+        "node_water_shock": {
+            "text": "Te lanzas al agua. Eres rápido, pero el submarino se sacude. El cable toca el agua. El pasillo entero se convierte en una silla eléctrica gigante. No tuviste ninguna oportunidad.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_cable_death": {
+            "text": "La linterna no es aislante. En cuanto tocas el cable, la corriente viaja por tu brazo, hierve tu sangre y... bueno, se acabó.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_pipes": {
+            "text": "Te cuelgas de las tuberías calientes del techo. Avanzas haciendo monadas sobre el agua mortal. Tus músculos arden, el sudor te ciega, pero logras llegar al otro lado y caer en la zona seca frente a la puerta del Reactor.\n\nEscuchas un silbido agudo: Fuga de radiación inminente.",
+            "choices": [
+                {
+                    "text": "Entrar corriendo al Reactor sin prepararse.",
+                    "next": "node_radiation"
+                },
+                {
+                    "text": "Buscar un traje NBQ en el armario de emergencia cercano.",
+                    "next": "node_suit_check"
+                },
+                {
+                    "text": "Sellar la puerta detrás de ti para evitar que el agua entre.",
+                    "next": "node_leak_trap"
+                }
+            ]
+        },
+        "node_radiation": {
+            "text": "Entras. El aire brilla con partículas azules ionizadas. Es hermoso. Luego empiezas a toser sangre. Tus células se deshacen en tiempo real. Mala elección.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_leak_trap": {
+            "text": "Pierdes tiempo sellando la puerta. Mientras lo haces, la presión del vapor dentro del Reactor revienta la compuerta. La explosión te lanza de vuelta al agua electrificada.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_suit_check": {
+            "text": "El armario está atascado, pero usas la palanca de emergencia. Consigues ponerte un traje anti-radiación viejo y parcheado. Justo a tiempo. Entras al Núcleo.\n\nACTO 3: EL CORAZÓN DE LA BESTIA\n\nEl Reactor está en estado crítico. Una voz sintética grita: 'FUSIÓN EN 60 SEGUNDOS'. Tienes tres controles frente a ti.",
+            "choices": [
+                {
+                    "text": "Botón Rojo: 'Purga de Emergencia del Núcleo'.",
+                    "next": "node_core_eject"
+                },
+                {
+                    "text": "Palanca Azul: 'Inundar Cámara de Reacción'.",
+                    "next": "node_steam_death"
+                },
+                {
+                    "text": "Teclado Amarillo: 'Desviar Energía a Cápsulas de Escape'.",
+                    "next": "node_escape_pod"
+                }
+            ]
+        },
+        "node_core_eject": {
+            "text": "Pulsas la purga. El núcleo es eyectado al océano. Sin energía, los sistemas de soporte vital se apagan instantáneamente. Te congelas en la oscuridad absoluta esperando que el oxígeno se acabe.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_steam_death": {
+            "text": "Tiras de la palanca azul. Agua fría entra en el reactor sobrecalentado. La expansión térmica es instantánea. Una explosión de vapor desintegra el submarino y todo lo que hay en él (incluido tú).\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_escape_pod": {
+            "text": "Tecleas el desvío. Las luces del reactor se apagan, pero una luz verde se enciende sobre la puerta de la Cápsula de Escape. Corres hacia ella, entras y golpeas el botón de lanzamiento justo cuando el submarino implosiona detrás de ti.\n\nACTO 4: EL DILEMA DEL CAPITÁN\n\nEl silencio del ascenso es roto por una alarma. 'Nivel de Energía Crítico'. La pantalla parpadea: BATERÍA AL 15%. No hay energía suficiente para mantener los soportes vitales (calefacción/oxígeno) Y transmitir a la superficie los 'Datos de la Bóveda' que has recopilado.\n\nDebes elegir tu legado.",
+            "choices": [
+                {
+                    "text": "Prioridad: Supervivencia. Cortar transmisión de datos. Desviar todo a soporte vital.",
+                    "next": "end_selfish"
+                },
+                {
+                    "text": "Prioridad: La Verdad. Transmitir los datos. Apagar soporte vital.",
+                    "next": "end_heroic"
+                },
+                {
+                    "text": "Arriesgarlo todo: Sobrecargar la celda de combustible para un pico de energía.",
+                    "next": "node_overload_puzzle"
+                }
+            ]
+        },
+        "end_selfish": {
+            "text": "Cortas la transmisión. La cápsula se calienta y el oxígeno fluye. Llegas a la superficie vivo, sano y salvo.\n\nEscribes libros sobre lo que viste, pero sin pruebas (los datos se perdieron), nadie te cree. Te consideran un loco que hundió su propio submarino. Mueres de viejo, solo y amargado, pero vivo.\n\nFINAL NEUTRAL: EL SUPERVIVIENTE.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "end_heroic": {
+            "text": "Inicias la transmisión. La barra de progreso avanza: 20%... 50%... 99%... 'TRANSMISIÓN COMPLETADA'.\n\nAl mismo tiempo, la luz se apaga. El frío del océano profundo penetra el casco. Tu respiración se congela en el aire. Te duermes mirando la luz lejana de la superficie. Encuentran tu cuerpo días después, junto con los datos que cambian la historia de la humanidad. Hay estatuas tuyas en cada ciudad.\n\nFINAL HEROICO: EL MÁRTIR.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_overload_puzzle": {
+            "text": "Decides jugar con la física. Abres el panel de la celda de combustible. Puedes puentear el limitador de seguridad.\n\nADVERTENCIA: Si la temperatura sube demasiado, explotarás. Si es muy baja, no tendrás potencia.\n¿A qué nivel ajustas el bypass?",
+            "choices": [
+                {
+                    "text": "110% (Seguro pero bajo)",
+                    "next": "end_overload_fail_low"
+                },
+                {
+                    "text": "150% (Peligroso)",
+                    "next": "end_golden"
+                },
+                {
+                    "text": "200% (Máximo)",
+                    "next": "end_overload_explode"
+                }
+            ]
+        },
+        "end_overload_explode": {
+            "text": "Empujas el dial al máximo. La celda de combustible brilla con luz blanca cegadora. La IA grita 'CRITIC-'.\n\nLa explosión se ve desde la superficie como una burbuja brillante. No queda nada.\n\nFIN DEL JUEGO: ÍCARO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "end_overload_fail_low": {
+            "text": "110% no es suficiente. Los sistemas parpadean y se mueren a mitad de camino. La cápsula se queda sin energía y se hunde de nuevo al abismo, convertida en tu ataúd de metal.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "end_golden": {
+            "text": "Ajustas al 150%. Las alarmas gritan, los cables echan humo... pero aguanta. La transmisión se completa Y los calentadores funcionan al mínimo.\n\nRompes la superficie del agua justo cuando sale el sol. Los barcos de rescate ya vienen hacia ti, guiados por tu señal. Tienes la vida y tienes la gloria.\n\nFINAL VERDADERO: EL MAESTRO DEL DESTINO.",
+            "type": "ending",
+            "result": "éxito"
+        }
+    }
+}

@@ -1,0 +1,124 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #e0e6ed;
+    --accent-red: #d03030;
+    --accent-blue: #00bcd4;
+    --panel-bg: #111;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    background: #0a0a0a;
+}
+
+header {
+    background: #111;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--accent-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#game-output {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Texto abajo */
+}
+
+.text-block {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#choice-area {
+    padding: 2rem;
+    background: #111;
+    border-top: 1px solid #333;
+}
+
+#choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.choice-btn {
+    background: #222;
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.choice-btn:hover {
+    background: #333;
+    border-color: var(--accent-blue);
+    color: white;
+    transform: translateX(5px);
+}
+
+.choice-btn:active {
+    background: var(--accent-blue);
+    color: black;
+}
+
+.result-success {
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.result-failure {
+    color: var(--accent-red);
+    font-weight: bold;
+    font-size: 1.2rem;
+}

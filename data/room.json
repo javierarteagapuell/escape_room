@@ -1,0 +1,7 @@
+{
+    "title": "La Bóveda Hundida",
+    "ambientacion": "El casco metálico gime bajo la presión del océano profundo. Un frío húmedo cala hasta los huesos, y el olor a aceite rancio satura el aire. La única luz proviene de las chispas que escupe el panel de control principal, parpadeando al ritmo de un latido moribundo.",
+    "room_type": "Sala de Mando de Submarino",
+    "difficulty": "medio",
+    "time_limit_minutes": 15
+}

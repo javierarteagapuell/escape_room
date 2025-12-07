@@ -1,0 +1,17 @@
+{
+    "inventory": [],
+    "object_states": {
+        "obj_panel": "critical_error",
+        "obj_manual": "closed",
+        "obj_caja_herramientas": "open",
+        "obj_armario": "locked",
+        "obj_valvula": "stuck_rusted",
+        "obj_llave_inglesa": "in_toolbox",
+        "obj_llave_laton": "hidden_in_manual",
+        "obj_aceite": "inside_cabinet",
+        "obj_fusibles": "inside_cabinet_safe_locked",
+        "obj_periscopio": "dirty"
+    },
+    "time_elapsed_seconds": 0,
+    "puzzle_progress": 0
+}

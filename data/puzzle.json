@@ -1,0 +1,39 @@
+{
+    "id": "puzzle_restore_pressure",
+    "steps": [
+        {
+            "id": "step_find_key",
+            "description": "Encontrar la llave del armario oculta en el manual.",
+            "activation_condition": "Examinar 'obj_manual' detalladamente.",
+            "result": "Encuentras la Llave de Latón pegada en una página.",
+            "hint_levels": [
+                "El manual parece tener algo extraño.",
+                "Hay un bulto entre las páginas.",
+                "Examina el manual a fondo."
+            ]
+        },
+        {
+            "id": "step_get_oil",
+            "description": "Abrir el armario para conseguir el aceite.",
+            "activation_condition": "Usar 'obj_llave_laton' en 'obj_armario'.",
+            "result": "El armario se abre con un chirrido. Dentro encuentras una Lata de Aceite.",
+            "hint_levels": [
+                "Necesitas algo para abrir ese armario.",
+                "La llave que encontraste debe servir.",
+                "Usa la llave en el armario."
+            ]
+        },
+        {
+            "id": "step_fix_valve",
+            "description": "Desatascar la válvula maestra para estabilizar la presión.",
+            "activation_condition": "Combinar 'obj_aceite' + 'obj_valvula' Y LUEGO Usar 'obj_llave_inglesa' en 'obj_valvula'.",
+            "result": "Con el aceite y la palanca de la llave, la válvula gira. El siseo de la presión se estabiliza. ¡El sistema de lastre está listo!",
+            "final_reward": "Estabilización de presión y final del juego.",
+            "hint_levels": [
+                "La válvula está demasiado dura.",
+                "Necesitas lubricante y palanca.",
+                "Usa aceite y la llave inglesa en la válvula."
+            ]
+        }
+    ]
+}
