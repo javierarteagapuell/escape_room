@@ -46,16 +46,60 @@ h1 {
     letter-spacing: 2px;
 }
 
+#scene-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+    /* Contiene el scroll interno */
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#game-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 50%;
+}
+
+#game-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+    object-fit: cover;
+    display: block;
+    animation: fadeIn 1s ease-out;
+}
+
 #game-output {
     flex: 1;
-    padding: 2rem;
     overflow-y: auto;
     font-size: 1.1rem;
     line-height: 1.7;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Texto abajo */
+    padding: 0;
+    /* Padding moved to scene-container */
+}
+
+@media (max-width: 768px) {
+    #scene-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #game-image-container {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    #game-output {
+        width: 100%;
+    }
 }
 
 .text-block {

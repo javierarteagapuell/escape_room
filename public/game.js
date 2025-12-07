@@ -45,6 +45,22 @@ function renderScene(data) {
     output.appendChild(textBlock);
     output.scrollTop = 0; // Force scroll to top for new text
 
+    // 1.5 Mostrar Imagen Dinámica
+    const imageContainer = document.getElementById('game-image-container');
+    imageContainer.innerHTML = ''; // Limpiar anterior
+
+    const encodedPrompt = encodeURIComponent(`cinematic shot, dark ominous sci-fi submarine atmosphere, underwater, 8k, highly detailed, ${data.texto_descriptivo.substring(0, 100)}`);
+    // Random seed to ensure image changes but stays consistent per view if we wanted, 
+    // but here random is fine or time based to avoid cache.
+    const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=512&height=512&nologo=true&seed=${Math.random()}`;
+
+    const img = document.createElement('img');
+    img.id = 'game-image';
+    img.src = imageUrl;
+    img.alt = "Visualización de la escena";
+    img.onerror = () => { img.style.display = 'none'; }; // Hide if fails
+    imageContainer.appendChild(img);
+
     // 2. Generar Botones
     choicesContainer.innerHTML = '';
 
