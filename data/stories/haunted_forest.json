@@ -6,18 +6,18 @@
     "start_node": "intro",
     "nodes": {
         "intro": {
-            "text": "La niebla se cierra a tu alrededor. Los árboles parecen inclinarse para escucharte. Has perdido el sendero hace horas. Tienes frío y hambre. A lo lejos, ves tres cosas llamativas.",
+            "text": "La niebla se cierra a tu alrededor como dedos fantasmales. Los árboles parecen inclinarse para escucharte, sus ramas retorcidas formando siluetas que no deberían existir en la naturaleza.\n\nHas perdido el sendero hace horas. Viniste al Bosque de los Susurros buscando hierbas medicinales para tu hermana enferma. Los aldeanos te advirtieron: 'Nunca entres después del anochecer. Nunca te desvíes del camino marcado. Y nunca, jamás, aceptes nada que te ofrezcan.'\n\nPero la desesperación te hizo ignorar sus advertencias. Ahora, mientras la última luz del día se desvanece entre las copas de los árboles, te das cuenta de tu error. El bosque está vivo de una forma antinatural. Oyes susurros en un idioma que no reconoces. Sientes miradas que no puedes localizar.\n\nTienes frío y hambre. Tu linterna de aceite parpadea débilmente. Según las leyendas, el bosque juega con los viajeros perdidos, ofreciéndoles falsas esperanzas y caminos que llevan a la perdición. Debes encontrar la salida antes del amanecer, o el bosque te reclamará para siempre.\n\nA lo lejos, distingues tres cosas que destacan en la penumbra: una luz cálida y acogedora que parece provenir de una cabaña; un antiguo altar de piedra cubierto de musgo que emana una energía extraña; y el sonido reconfortante de un arroyo cercano, cuyo murmullo promete agua fresca.\n\nCada opción podría ser tu salvación... o tu condena.",
             "choices": [
                 {
-                    "text": "Una luz cálida que parece una cabaña.",
+                    "text": "Seguir la luz cálida que parece una cabaña.",
                     "next": "node_witch_hut"
                 },
                 {
-                    "text": "Un antiguo altar de piedra cubierto de musgo.",
+                    "text": "Acercarse al antiguo altar de piedra cubierto de musgo.",
                     "next": "node_altar"
                 },
                 {
-                    "text": "Seguir el sonido de un arroyo cercano.",
+                    "text": "Seguir el sonido del arroyo cercano.",
                     "next": "node_river"
                 }
             ]

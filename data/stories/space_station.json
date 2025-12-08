@@ -6,7 +6,7 @@
     "start_node": "intro",
     "nodes": {
         "intro": {
-            "text": "Tu nave se acopla a la exclusa de la estación minera 'Helios-9'. Las luces parpadean. El escáner de vida muestra lecturas erráticas. Al abrir la puerta, un olor a ozono y carne quemada te golpea.\n\nFrente a ti hay tres caminos.",
+            "text": "Tu nave se acopla a la exclusa de la estación minera 'Helios-9'. El silencio es absoluto. Demasiado absoluto.\n\nHace 48 horas, la estación envió una señal de socorro automática. 'Contaminación biológica. Evacuación inmediata.' Luego, nada. La corporación te envió a investigar. Eres un especialista en recuperación de activos... y en situaciones peligrosas.\n\nLas luces parpadean de forma irregular, creando sombras danzantes en los pasillos metálicos. El escáner de vida muestra lecturas erráticas: 127 señales vitales detectadas, pero ninguna responde a las comunicaciones. Algo no cuadra.\n\nAl abrir la puerta de la exclusa, un olor nauseabundo te golpea: ozono quemado mezclado con algo orgánico en descomposición. El aire es respirable, pero apenas. Tu traje sellado es lo único entre tú y ese hedor.\n\nEl mapa de la estación muestra tres áreas principales accesibles desde aquí: el Centro de Mando en el nivel superior, donde estarían los registros de lo que pasó; la Enfermería en el nivel medio, donde podrían haber supervivientes heridos; y el Hangar en el nivel inferior, donde está tu única ruta de escape si las cosas se ponen feas.\n\nEmpuñas tu arma de plasma. Sea lo que sea que pasó aquí, no vas a dejarte sorprender.",
             "choices": [
                 {
                     "text": "Ir al Centro de Mando para revisar los registros.",
