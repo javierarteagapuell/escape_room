@@ -1,8 +1,14 @@
 const output = document.getElementById('game-output');
 const choicesContainer = document.getElementById('choices-container');
 
+// Variable global para recordar la historia actual
+let currentStoryId = null;
+
 async function startGame(storyId) {
     try {
+        // Guardar el ID de la historia actual
+        currentStoryId = storyId;
+
         const response = await fetch('/api/start', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -105,7 +111,7 @@ function renderScene(data) {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
         btn.textContent = "Reiniciar Misión";
-        btn.onclick = startGame;
+        btn.onclick = () => startGame(currentStoryId); // Reiniciar la misma historia
         choicesContainer.appendChild(btn);
     } else {
         data.opciones.forEach((texto, index) => {

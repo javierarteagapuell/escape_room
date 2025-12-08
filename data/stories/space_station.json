@@ -23,100 +23,717 @@
             ]
         },
         "node_command": {
-            "text": "Entras al Centro de Mando. Pantallas rotas. En el suelo yace el capitán, con el pecho abierto. En su mano tiene una tarjeta de acceso ensangrentada. De repente, oyes un ruido en los conductos de ventilación sobre ti.",
+            "text": "ACTO 2: EL CENTRO DE MANDO\n\nSubes por las escaleras de emergencia. El ascensor está fuera de servicio, con las puertas abiertas mostrando un pozo oscuro y sin fondo.\n\nLlegas al Centro de Mando. Es una escena de caos: pantallas rotas, consolas arrancadas de sus soportes, y sangre... mucha sangre seca en las paredes formando patrones extraños, casi como si fueran palabras.\n\nEn el suelo yace el capitán. Su uniforme está desgarrado y su pecho abierto de una forma que ningún arma humana podría hacer. En su mano rígida sostiene una tarjeta de acceso ensangrentada con la etiqueta 'NIVEL OMEGA'.\n\nDe repente, escuchas un ruido metálico en los conductos de ventilación sobre ti. Algo se está moviendo ahí arriba, algo grande.",
             "choices": [
                 {
-                    "text": "Coger la tarjeta y correr hacia el ascensor.",
-                    "next": "node_elevator_escape"
+                    "text": "Coger rápidamente la tarjeta y correr hacia la salida.",
+                    "next": "node_command_escape"
                 },
                 {
-                    "text": "Disparar al conducto de ventilación.",
-                    "next": "node_vent_attack"
+                    "text": "Revisar la consola principal para ver los registros.",
+                    "next": "node_check_logs"
                 },
                 {
-                    "text": "Esconderse bajo la consola principal.",
-                    "next": "node_hide_death"
+                    "text": "Apuntar tu arma al conducto y esperar.",
+                    "next": "node_vent_standoff"
                 }
             ]
         },
         "node_medbay": {
-            "text": "La enfermería está llena de cápsulas de estasis rotas. Un líquido verde cubre el suelo. Ves una sombra que se mueve detrás de una cortina médica. Es humanoide, pero sus movimientos son espasmódicos.",
+            "text": "ACTO 2: LA ENFERMERÍA\n\nBajas al nivel medio. El pasillo hacia la enfermería está iluminado solo por luces de emergencia rojas. Tus pasos resuenan en el metal.\n\nLa puerta de la enfermería está entreabierta. Empujas y entras. La escena es perturbadora: cápsulas de estasis rotas, equipo médico esparcido por el suelo, y un líquido verde viscoso que cubre gran parte del piso, burbujeando ligeramente.\n\nVes una sombra moviéndose detrás de una cortina médica al fondo de la sala. Es humanoide, pero sus movimientos son espasmódicos, antinaturales. Escuchas una respiración pesada y húmeda.",
             "choices": [
                 {
-                    "text": "Preguntar '¿Hay alguien ahí?'",
-                    "next": "node_scream_death"
+                    "text": "Preguntar en voz alta '¿Hay alguien ahí? ¿Necesitas ayuda?'",
+                    "next": "node_call_out"
                 },
                 {
-                    "text": "Acercarse sigilosamente con el arma lista.",
-                    "next": "node_ambush"
+                    "text": "Acercarte sigilosamente con el arma lista.",
+                    "next": "node_medbay_approach"
                 },
                 {
-                    "text": "Salir de la habitación lentamente.",
-                    "next": "node_corridor_chase"
+                    "text": "Buscar en los armarios médicos antes de investigar la sombra.",
+                    "next": "node_medical_supplies"
                 }
             ]
         },
         "node_hangar": {
-            "text": "El hangar es enorme. Tu nave está ahí, pero hay... huevos. Cientos de huevos alienígenas pegados al casco de tu nave. Uno de ellos empieza a abrirse justo cuando llegas.",
+            "text": "ACTO 2: EL HANGAR INFESTADO\n\nDesciendes al nivel inferior. El hangar es enorme, diseñado para albergar naves de carga y transporte. Tu nave está acoplada en la exclusa superior, pero aquí abajo hay algo que te hiela la sangre.\n\nHuevos. Cientos de huevos alienígenas del tamaño de un humano, pegados a las paredes, al techo, y especialmente alrededor de las naves que están estacionadas aquí. Tienen una textura orgánica y translúcida, y puedes ver sombras moviéndose dentro de algunos.\n\nUno de los huevos más cercanos a ti comienza a abrirse, grietas apareciendo en su superficie. Algo está a punto de salir.",
             "choices": [
                 {
-                    "text": "Correr a la nave e intentar despegar ya.",
-                    "next": "node_ship_infestation"
+                    "text": "Dispararle al huevo antes de que se abra completamente.",
+                    "next": "node_shoot_egg"
                 },
                 {
-                    "text": "Usar el lanzallamas de emergencia del hangar.",
-                    "next": "node_fire_win"
+                    "text": "Retroceder lentamente hacia la salida sin hacer ruido.",
+                    "next": "node_hangar_retreat"
                 },
                 {
-                    "text": "Intentar quitar los huevos manualmente.",
-                    "next": "node_acid_burn"
+                    "text": "Buscar el panel de control del lanzallamas de emergencia.",
+                    "next": "node_find_flamethrower"
                 }
             ]
         },
-        "node_vent_attack": {
-            "text": "Disparas. Un chillido inhumano resuena. Algo cae del techo, herido pero furioso. Es una criatura de garras afiladas. Antes de que puedas recargar, salta sobre ti.\n\nFIN DEL JUEGO.",
+        "node_command_escape": {
+            "text": "Agarras la tarjeta y corres hacia la puerta. Justo cuando sales, algo cae del conducto de ventilación con un golpe metálico pesado.\n\nNo miras atrás. Corres por el pasillo mientras escuchas pasos rápidos y pesados persiguiéndote. Lo que sea que es, es rápido.\n\nLlegas a una intersección. Puedes ir hacia las cápsulas de escape, hacia el laboratorio de investigación (que la tarjeta OMEGA podría abrir), o hacia el reactor para intentar sobrecargar la estación.",
+            "choices": [
+                {
+                    "text": "Correr directamente a las cápsulas de escape.",
+                    "next": "node_pods_blocked"
+                },
+                {
+                    "text": "Usar la tarjeta OMEGA para entrar al laboratorio.",
+                    "next": "node_lab_discovery"
+                },
+                {
+                    "text": "Ir al reactor para destruir la estación.",
+                    "next": "node_reactor_sabotage"
+                }
+            ]
+        },
+        "node_check_logs": {
+            "text": "Ignoras el ruido y te acercas a la consola principal. Logras activarla con energía de emergencia. Los últimos registros de video comienzan a reproducirse.\n\nVes al capitán, hace dos días, grabando: 'Día 47 de la excavación. Encontramos algo en el asteroide. Algo... vivo. Lo trajimos a bordo para estudiarlo. Fue un error. Se reprodujo. Infectó a la tripulación. Yo... yo también estoy infectado. Si alguien encuentra esto: DESTRUYAN LA ESTACIÓN. No dejen que esto llegue a—'\n\nEl video se corta. El ruido en el conducto se detiene. Hay un silencio absoluto. Demasiado silencio.\n\nDe repente, el conducto explota y algo salta sobre ti. No tuviste tiempo de reaccionar. Las garras te atraviesan antes de que puedas gritar.\n\nFIN DEL JUEGO.",
             "type": "ending",
             "result": "fallo"
         },
-        "node_hide_death": {
-            "text": "Te escondes. La criatura baja. Oyes sus pasos pesados. Se detiene justo frente a la consola. Huele tu miedo. Las garras atraviesan el metal y te atrapan.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
+        "node_vent_standoff": {
+            "text": "Apuntas tu arma al conducto. El ruido se detiene. Hay un momento de tensión absoluta.\n\nEntonces, lentamente, una rejilla se abre y algo asoma. Es una criatura que alguna vez fue humana. Su piel está cubierta de placas quitinosas negras, sus ojos son completamente blancos, y de su boca gotea un líquido verde.\n\n'Ayuda... me', susurra con voz distorsionada. 'Todavía... humano... dentro...'\n\n¿Es una trampa o realmente queda algo de humanidad?",
+            "choices": [
+                {
+                    "text": "Dispararle inmediatamente.",
+                    "next": "node_shoot_infected"
+                },
+                {
+                    "text": "Intentar comunicarte y ayudarlo.",
+                    "next": "node_help_infected"
+                },
+                {
+                    "text": "Retroceder lentamente sin bajar el arma.",
+                    "next": "node_back_away"
+                }
+            ]
         },
-        "node_elevator_escape": {
-            "text": "Corres al ascensor y pasas la tarjeta. Las puertas se cierran justo cuando las garras rasgan el metal. Subes a las cápsulas de escape. Te lanzas al espacio, dejando atrás la pesadilla.\n\nFINAL: ESCAPE POR LOS PELOS.",
+        "node_call_out": {
+            "text": "¿Hay alguien ahí?', gritas. 'Soy del equipo de rescate. ¿Necesitas ayuda?'\n\nLa sombra se detiene. Se gira lentamente hacia ti. Cuando sale de detrás de la cortina, ves que no tiene cara. Solo una masa de tentáculos donde debería estar su cabeza.\n\nLanza un proyectil de hueso afilado que atraviesa el aire directamente hacia tu cuello.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "El proyectil te atraviesa la garganta. Caes al suelo mientras tu visión se oscurece.\n\nFIN DEL JUEGO."
+        },
+        "node_medbay_approach": {
+            "text": "ACTO 3: EL ENCUENTRO\n\nTe acercas sigilosamente, con el arma apuntando hacia la sombra. Tus botas evitan el líquido verde en el suelo.\n\nCuando estás a pocos metros, la cortina se mueve. La criatura se gira. Es horrible: un híbrido entre humano y algo alienígena. Reconoces el uniforme... era la doctora Chen, la jefa médica.\n\nPero antes de que puedas disparar, ella levanta una mano temblorosa. 'No... dispares', dice con voz distorsionada. 'Todavía... consciente. Puedo... ayudar.'\n\nSeñala hacia un armario. 'Suero... experimental. Puede... detener... transformación.'",
+            "choices": [
+                {
+                    "text": "Confiar en ella y buscar el suero.",
+                    "next": "node_get_serum"
+                },
+                {
+                    "text": "Dispararle, es demasiado peligroso.",
+                    "next": "node_shoot_doctor"
+                },
+                {
+                    "text": "Preguntarle qué pasó en la estación.",
+                    "next": "node_ask_doctor"
+                }
+            ]
+        },
+        "node_medical_supplies": {
+            "text": "Decides primero revisar los armarios médicos. Encuentras kits de primeros auxilios, estimulantes, y algo interesante: un inyector marcado 'ANTI-PARASITARIO EXPERIMENTAL - PROYECTO AEGIS'.\n\nTambién encuentras un diario médico. La última entrada dice: 'La infección se propaga por contacto con el fluido verde. Evitar a toda costa. El suero AEGIS muestra promesa en las primeras etapas, pero una vez completamente transformados...'\n\nEl resto está manchado de sangre y es ilegible. Guardas el inyector.\n\nLa sombra detrás de la cortina se mueve más agresivamente ahora, como si hubiera detectado tu presencia.",
+            "choices": [
+                {
+                    "text": "Acercarte ahora con el inyector listo.",
+                    "next": "node_approach_with_serum"
+                },
+                {
+                    "text": "Salir de la enfermería silenciosamente.",
+                    "next": "node_leave_medbay"
+                },
+                {
+                    "text": "Disparar a través de la cortina.",
+                    "next": "node_shoot_curtain"
+                }
+            ]
+        },
+        "node_shoot_egg": {
+            "text": "Disparas al huevo. Explota en una lluvia de ácido verde. Gotas caen sobre tu traje, sisseando al contacto. El traje resiste... por ahora.\n\nPero el ruido ha alertado a los demás huevos. Todos comienzan a abrirse simultáneamente. Decenas de criaturas pequeñas, parecidas a arañas con demasiadas patas, emergen y se dirigen hacia ti en una ola chitinosa.\n\nNo hay forma de matarlas a todas.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Te cubren en segundos. Sientes sus mandíbulas perforando tu traje. El ácido entra. El dolor es insoportable.\n\nFIN DEL JUEGO."
+        },
+        "node_hangar_retreat": {
+            "text": "ACTO 3: LA RETIRADA TÁCTICA\n\nRetrocedes lentamente, sin hacer ruido. El huevo termina de abrirse y una criatura emerge: es del tamaño de un perro, con múltiples ojos y mandíbulas que gotean ácido.\n\nPero no te ha visto. Está desorientada, recién nacida. Sigues retrocediendo hasta que estás fuera del hangar.\n\nAhora tienes información valiosa: la estación está infestada. Necesitas encontrar una forma de escapar o de destruir todo esto antes de que se propague.",
+            "choices": [
+                {
+                    "text": "Ir al Centro de Mando para activar la autodestrucción.",
+                    "next": "node_command_from_hangar"
+                },
+                {
+                    "text": "Buscar las cápsulas de escape en otro nivel.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Investigar el laboratorio de investigación.",
+                    "next": "node_research_lab"
+                }
+            ]
+        },
+        "node_find_flamethrower": {
+            "text": "ACTO 3: EL PURIFICADOR\n\nIgnoras el huevo que se abre y corres hacia el panel de emergencia en la pared. Rompes el vidrio y sacas el lanzallamas de emergencia. Es pesado pero funcional.\n\nJusto a tiempo. La criatura emerge completamente del huevo y te ve. Chilla y se lanza hacia ti.\n\nAprietas el gatillo. Las llamas envuelven a la criatura. Chilla y se retuerce, pero no se detiene. Sigues quemando hasta que finalmente cae, carbonizada.\n\nPero el fuego se ha extendido a otros huevos. El hangar entero comienza a arder.",
+            "choices": [
+                {
+                    "text": "Quedarte y quemar todos los huevos.",
+                    "next": "node_burn_all"
+                },
+                {
+                    "text": "Escapar antes de que el fuego te atrape.",
+                    "next": "node_escape_fire"
+                },
+                {
+                    "text": "Intentar llegar a una de las naves y despegar.",
+                    "next": "node_hangar_ship"
+                }
+            ]
+        },
+        "node_pods_blocked": {
+            "text": "Corres hacia las cápsulas de escape. Llegas a la bahía de cápsulas, pero lo que ves te detiene en seco.\n\nTodas las cápsulas están cubiertas de la misma sustancia orgánica que viste en el hangar. Han sido saboteadas, inutilizadas. La infección es inteligente.\n\nDetrás de ti, escuchas que la criatura se acerca. No tienes salida.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "La criatura te alcanza. No hay escape. No hay salvación.\n\nFIN DEL JUEGO."
+        },
+        "node_lab_discovery": {
+            "text": "ACTO 3: EL LABORATORIO OMEGA\n\nUsas la tarjeta en el lector. La puerta sellada se abre con un siseo neumático. Entras y la cierras detrás de ti justo cuando la criatura llega. Golpea la puerta, pero no puede entrar.\n\nEl laboratorio está intacto, sellado herméticamente. Ves especímenes en contenedores, notas de investigación, y una terminal activa.\n\nLees los archivos: 'Organismo XB-7, encontrado en el asteroide. Capacidad de adaptación extrema. Infecta huéspedes y los transforma. Altamente peligroso. Recomendación: destrucción inmediata. RECHAZADO POR LA CORPORACIÓN. Orden: estudiar para aplicaciones militares.'\n\nHay un botón rojo en la pared: 'PURGA BIOLÓGICA - DESTRUIR LABORATORIO Y SECCIÓN ADYACENTE'.",
+            "choices": [
+                {
+                    "text": "Presionar el botón de purga biológica.",
+                    "next": "node_bio_purge"
+                },
+                {
+                    "text": "Tomar muestras del organismo para la corporación.",
+                    "next": "node_take_samples"
+                },
+                {
+                    "text": "Buscar otra salida del laboratorio.",
+                    "next": "node_lab_exit"
+                }
+            ]
+        },
+        "node_reactor_sabotage": {
+            "text": "Corres hacia el reactor. La criatura te persigue pero eres más rápido. Llegas a la sala del reactor y cierras la puerta de seguridad.\n\nEl reactor está funcionando normalmente. Encuentras el panel de control. Puedes sobrecargarlo para que explote, destruyendo la estación y todo lo que hay en ella... incluido tú.\n\nPero también ves un conducto de mantenimiento que podría llevarte a una sección diferente de la estación.",
+            "choices": [
+                {
+                    "text": "Sobrecargar el reactor y sacrificarte.",
+                    "next": "node_reactor_sacrifice"
+                },
+                {
+                    "text": "Usar el conducto de mantenimiento para escapar.",
+                    "next": "node_maintenance_tunnel"
+                },
+                {
+                    "text": "Configurar el reactor para explotar en 10 minutos y buscar escape.",
+                    "next": "node_timed_explosion"
+                }
+            ]
+        },
+        "node_shoot_infected": {
+            "text": "No te arriesgas. Disparas. El plasma atraviesa su pecho y cae del conducto, muerto.\n\nPero al caer, su cuerpo explota en un rocío de líquido verde. Algunas gotas tocan tu piel expuesta. Sientes un ardor inmediato.\n\nLa infección entra en tu torrente sanguíneo. Tienes minutos antes de comenzar la transformación.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Intentas llegar a la enfermería, pero el dolor es demasiado. Caes al suelo mientras tu cuerpo comienza a cambiar. Tu último pensamiento humano es de arrepentimiento.\n\nFIN DEL JUEGO."
+        },
+        "node_help_infected": {
+            "text": "Bajas el arma ligeramente. 'Está bien', dices. 'Voy a ayudarte.'\n\nTe acercas. La criatura tiembla. 'Gracias', susurra. 'Gracias...'\n\nEntonces, sus ojos cambian. Lo que sea que quedaba de humano desaparece. Se lanza sobre ti con velocidad imposible.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Era una trampa. La infección usó su humanidad residual como cebo. Mueres sin entender que la persona ya no estaba ahí.\n\nFIN DEL JUEGO."
+        },
+        "node_back_away": {
+            "text": "Retrocedes lentamente, manteniendo el arma apuntada. La criatura no te sigue. Se queda en el conducto, observándote con esos ojos blancos.\n\n'Vete', susurra finalmente. 'Antes... de que pierda... control.'\n\nSales del Centro de Mando. Has ganado tiempo. Ahora necesitas decidir tu próximo movimiento: buscar las cápsulas de escape, ir al laboratorio si encuentras acceso, o intentar destruir la estación.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Buscar el laboratorio de investigación.",
+                    "next": "node_research_lab"
+                },
+                {
+                    "text": "Ir al reactor para destruir la estación.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_get_serum": {
+            "text": "Decides confiar. Vas al armario que señaló y encuentras un inyector con líquido azul brillante. 'SUERO AEGIS' está marcado en él.\n\n'Inyéctame', dice la doctora Chen. 'Rápido... perdiendo... control.'\n\nLe inyectas el suero. Ella grita de dolor, pero lentamente las placas quitinosas comienzan a retroceder. En minutos, está más humana, aunque claramente débil.\n\n'Gracias', dice con voz más clara. 'Escucha... la estación está perdida. Pero puedo ayudarte a escapar. Conozco un camino.'",
+            "choices": [
+                {
+                    "text": "Seguir a la doctora Chen.",
+                    "next": "node_follow_chen"
+                },
+                {
+                    "text": "Preguntarle sobre la infección primero.",
+                    "next": "node_chen_info"
+                },
+                {
+                    "text": "Dejarla y buscar tu propio camino.",
+                    "next": "node_leave_chen"
+                }
+            ]
+        },
+        "node_shoot_doctor": {
+            "text": "No puedes arriesgarte. Disparas. La doctora Chen cae, muerta antes de tocar el suelo.\n\nPero al morir, su cuerpo libera esporas verdes al aire. Comienzas a toser. Tu traje tiene un desgarro que no habías notado. Las esporas entran en tus pulmones.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "La transformación es rápida. En minutos, ya no eres tú. Te conviertes en uno de ellos.\n\nFIN DEL JUEGO."
+        },
+        "node_ask_doctor": {
+            "text": "'¿Qué pasó aquí?', preguntas, manteniendo la distancia.\n\nElla tose. 'Encontramos... organismo en asteroide. Corporación quería... arma biológica. Nos infectó a todos. Yo... resistí más tiempo. Soy doctora... creé suero... pero solo ralentiza.'\n\n'¿Hay cura?', preguntas.\n\n'No. Solo... escape. O destrucción. Debes... elegir.'\n\nDe repente, ella se convulsiona. 'Vete... ahora... perdiendo control...'\n\nSu transformación se acelera. Tienes segundos.",
+            "choices": [
+                {
+                    "text": "Dispararle antes de que se transforme completamente.",
+                    "next": "node_mercy_kill"
+                },
+                {
+                    "text": "Correr fuera de la enfermería.",
+                    "next": "node_flee_medbay"
+                }
+            ]
+        },
+        "node_approach_with_serum": {
+            "text": "Con el inyector en una mano y el arma en la otra, te acercas a la cortina. La apartas.\n\nLa doctora Chen está ahí, parcialmente transformada. Cuando ve el inyector, sus ojos muestran reconocimiento y esperanza.\n\n'AEGIS', susurra. 'Sí... ayuda...'\n\nLe inyectas el suero. Funciona. La transformación se detiene, incluso retrocede ligeramente. Ella recupera algo de lucidez.\n\n'Gracias... Escucha... puedo guiarte... a escape secreto. Cápsula... personal del capitán. Nivel superior... detrás de su oficina.'",
+            "choices": [
+                {
+                    "text": "Seguir su guía hacia la cápsula secreta.",
+                    "next": "node_secret_pod"
+                },
+                {
+                    "text": "Preguntarle cómo destruir la estación primero.",
+                    "next": "node_chen_destruction"
+                }
+            ]
+        },
+        "node_leave_medbay": {
+            "text": "Sales de la enfermería sin confrontar a la sombra. Es la decisión prudente. Ahora sabes que la infección es real y peligrosa.\n\nTienes el inyector AEGIS, que podría ser útil. Necesitas decidir tu próximo paso.",
+            "choices": [
+                {
+                    "text": "Ir al Centro de Mando.",
+                    "next": "node_command_from_medbay"
+                },
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Investigar el hangar.",
+                    "next": "node_hangar_from_medbay"
+                }
+            ]
+        },
+        "node_shoot_curtain": {
+            "text": "Disparas a través de la cortina. Hay un chillido agudo y algo cae pesadamente.\n\nApartas la cortina. Has matado a la doctora Chen. Pero en su muerte, su cuerpo libera un gas tóxico. Tu traje protege... pero no completamente. Comienzas a sentirte mareado.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "El gas es más fuerte de lo que pensabas. Tu visión se nubla. Caes al suelo. La oscuridad te reclama.\n\nFIN DEL JUEGO."
+        },
+        "node_command_from_hangar": {
+            "text": "Subes al Centro de Mando. Encuentras la escena que ya conoces: el capitán muerto, la tarjeta OMEGA, y evidencia de violencia extrema.\n\nEsta vez, evitas el conducto de ventilación y vas directamente a la consola de autodestrucción. Necesitas la tarjeta OMEGA para activarla.\n\nLa tomas del cadáver del capitán. Justo entonces, escuchas movimiento detrás de ti.",
+            "choices": [
+                {
+                    "text": "Activar la autodestrucción inmediatamente.",
+                    "next": "node_quick_destruct"
+                },
+                {
+                    "text": "Girarte para enfrentar la amenaza.",
+                    "next": "node_face_threat"
+                }
+            ]
+        },
+        "node_find_pods": {
+            "text": "Sigues las señales hacia la bahía de cápsulas de escape. El camino está oscuro y silencioso. Demasiado silencioso.\n\nLlegas a la bahía. Tu corazón se hunde. Las cápsulas están saboteadas, cubiertas de sustancia orgánica alienígena. Todas excepto una al fondo, que parece intacta.\n\nPero entre tú y esa cápsula hay algo moviéndose en las sombras. Algo grande.",
+            "choices": [
+                {
+                    "text": "Correr directamente hacia la cápsula.",
+                    "next": "node_run_to_pod"
+                },
+                {
+                    "text": "Usar tu arma para iluminar las sombras.",
+                    "next": "node_light_shadows"
+                },
+                {
+                    "text": "Buscar otra ruta.",
+                    "next": "node_alternate_route"
+                }
+            ]
+        },
+        "node_research_lab": {
+            "text": "Encuentras el laboratorio de investigación. La puerta está sellada pero no bloqueada. Entras.\n\nEl laboratorio está en caos. Especímenes rotos, notas esparcidas, y en el centro, un contenedor grande y vacío con la etiqueta 'ORGANISMO XB-7 - PELIGRO EXTREMO'.\n\nEncuentras un diario de investigación. La última entrada dice: 'La corporación nos ordenó estudiar el organismo. Dijeron que podría ser un arma. Estaban equivocados. No es un arma. Es una plaga. Y ahora está suelta.'\n\nHay un terminal activo con dos opciones: 'PURGA BIOLÓGICA' y 'TRANSMITIR DATOS A CORPORACIÓN'.",
+            "choices": [
+                {
+                    "text": "Activar la purga biológica.",
+                    "next": "node_activate_purge"
+                },
+                {
+                    "text": "Transmitir los datos primero, luego purgar.",
+                    "next": "node_transmit_data"
+                },
+                {
+                    "text": "Ignorar ambos y buscar escape.",
+                    "next": "node_ignore_terminal"
+                }
+            ]
+        },
+        "node_burn_all": {
+            "text": "Decides quedarte y terminar el trabajo. Usas el lanzallamas metódicamente, quemando cada huevo, cada criatura que emerge.\n\nEl calor es intenso. Tu traje comienza a sobrecalentarse. Pero continúas. Finalmente, el último huevo arde.\n\nPero el hangar está en llamas y el fuego se está extendiendo. Necesitas salir ya.",
+            "choices": [
+                {
+                    "text": "Correr hacia la salida más cercana.",
+                    "next": "node_escape_hangar_fire"
+                },
+                {
+                    "text": "Intentar llegar a tu nave en la exclusa superior.",
+                    "next": "node_reach_ship"
+                }
+            ]
+        },
+        "node_escape_fire": {
+            "text": "Sales corriendo del hangar mientras las llamas se propagan. Detrás de ti, escuchas explosiones mientras los huevos estallan por el calor.\n\nLlegas a un pasillo seguro. Has sobrevivido, pero el hangar está perdido. Ahora necesitas encontrar otra forma de escapar.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Ir al Centro de Mando.",
+                    "next": "node_command_from_hangar"
+                }
+            ]
+        },
+        "node_hangar_ship": {
+            "text": "Corres hacia una de las naves de carga en el hangar. Está parcialmente cubierta de huevos, pero la cabina parece intacta.\n\nSubes y cierras la escotilla. Los controles funcionan. Inicias la secuencia de despegue mientras el fuego se acerca.\n\nLa nave se eleva. Estás escapando. Pero entonces escuchas un ruido en la bodega de carga. No estás solo en la nave.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Algo emerge de la bodega. Una criatura adulta, completamente desarrollada. En el espacio confinado de la nave, no tienes oportunidad.\n\nFIN DEL JUEGO."
+        },
+        "node_bio_purge": {
+            "text": "Presionas el botón. Una voz automatizada anuncia: 'PURGA BIOLÓGICA ACTIVADA. INCINERACIÓN EN 60 SEGUNDOS.'\n\nLas llamas comenzarán pronto, destruyendo el laboratorio y todo lo que contiene. Pero tú estás dentro. Necesitas salir.\n\nVes una escotilla de emergencia en el techo.",
+            "choices": [
+                {
+                    "text": "Trepar por la escotilla de emergencia.",
+                    "next": "node_emergency_hatch"
+                },
+                {
+                    "text": "Intentar cancelar la purga.",
+                    "next": "node_cancel_purge"
+                }
+            ]
+        },
+        "node_take_samples": {
+            "text": "Decides tomar muestras del organismo. La corporación pagará bien por esto. Llenas varios contenedores con especímenes.\n\nPero al manipular el último espécimen, el contenedor se rompe. El organismo te toca. Sientes un ardor inmediato.\n\nLa infección es instantánea.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "La codicia te ha matado. Te transformas en minutos, convirtiéndote en uno de los monstruos que viniste a investigar.\n\nFIN DEL JUEGO."
+        },
+        "node_lab_exit": {
+            "text": "Buscas otra salida. Encuentras un conducto de mantenimiento que lleva a otra sección de la estación.\n\nTrepas por el conducto. Es estrecho y oscuro, pero eventualmente llegas a una nueva área: la bahía de cápsulas de escape.\n\nDesde aquí, puedes ver una cápsula que parece funcional.",
+            "choices": [
+                {
+                    "text": "Ir directamente a la cápsula.",
+                    "next": "node_direct_pod"
+                },
+                {
+                    "text": "Revisar primero el área por amenazas.",
+                    "next": "node_check_area"
+                }
+            ]
+        },
+        "node_reactor_sacrifice": {
+            "text": "Configuras el reactor para sobrecarga inmediata. Las alarmas suenan. 'FUSIÓN CRÍTICA EN 10... 9... 8...'\n\nTe sientas en el suelo, aceptando tu destino. Al menos la infección no se propagará. Morirás, pero salvarás a incontables otros.\n\nLa explosión es instantánea. No sientes dolor. La estación Helios-9 es destruida completamente. La infección muere con ella. Tu sacrificio salva a la humanidad, aunque nadie sabrá nunca tu nombre.\n\nFINAL HEROICO: EL MÁRTIR ANÓNIMO.",
             "type": "ending",
             "result": "éxito"
         },
-        "node_scream_death": {
-            "text": "Gritas. La figura se gira. No tiene cara, solo una boca llena de dientes circulares. Lanza un proyectil de hueso que te atraviesa el cuello.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
+        "node_maintenance_tunnel": {
+            "text": "Entras al conducto de mantenimiento. Es estrecho y oscuro, pero prefieres eso a enfrentar a las criaturas.\n\nEl conducto te lleva a través de la estación. Eventualmente, sales en la bahía de cápsulas de escape. Ves una cápsula funcional.\n\nPero también ves algo más: una criatura reina, enorme, custodiando las cápsulas.",
+            "choices": [
+                {
+                    "text": "Intentar distraer a la reina y correr a la cápsula.",
+                    "next": "node_distract_queen"
+                },
+                {
+                    "text": "Retroceder y buscar otra ruta.",
+                    "next": "node_find_other_way"
+                }
+            ]
         },
-        "node_ambush": {
-            "text": "Te acercas. La criatura es rápida, pero tú disparas primero. Cae muerta. Sin embargo, el ruido atrae a más. Tienes que huir, pero ahora bloquean la salida.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
+        "node_timed_explosion": {
+            "text": "Configuras el reactor para explotar en 10 minutos. Eso te da tiempo para escapar.\n\n'AUTODESTRUCCIÓN EN 10 MINUTOS', anuncia la computadora.\n\nCorres hacia las cápsulas de escape. El tiempo corre. Llegas a la bahía con 5 minutos restantes.\n\nHay una cápsula funcional, pero está al otro lado de la bahía. Y hay criaturas entre tú y ella.",
+            "choices": [
+                {
+                    "text": "Correr directamente, disparando a todo lo que se mueva.",
+                    "next": "node_run_and_gun"
+                },
+                {
+                    "text": "Buscar una ruta alternativa más segura.",
+                    "next": "node_safe_route_timed"
+                }
+            ]
         },
-        "node_corridor_chase": {
-            "text": "Sales y bloqueas la puerta. Corres hacia las cápsulas de escape, pero en el pasillo te encuentras con la reina del enjambre. Es demasiado grande para pelear.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
-        },
-        "node_ship_infestation": {
-            "text": "Entras y despegas. Crees que estás a salvo hasta que escuchas un siseo detrás del asiento del piloto. Un 'polizón' ha venido contigo.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
-        },
-        "node_acid_burn": {
-            "text": "Tocas un huevo. Explota en ácido. Tu traje se derrite, y luego tú. Mala idea.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
-        },
-        "node_fire_win": {
-            "text": "Agarras el lanzallamas. '¡Comed fuego!'. Incendias los huevos y a la reina que acaba de aparecer. Corres a tu nave mientras el hangar arde. Despegas triunfante viendo la explosión de la estación.\n\nFINAL: EL PURIFICADOR.",
+        "node_follow_chen": {
+            "text": "Sigues a la doctora Chen. Está débil pero se mueve con determinación. Te lleva por pasillos que no conocías, evitando áreas infestadas.\n\nFinalmente llegáis a la oficina del capitán. Detrás de un panel secreto hay una cápsula de escape personal.\n\n'Vete', dice Chen. 'Yo... no sobreviviré mucho más. El suero solo ralentiza... no cura. Pero tú puedes escapar. Advierte a otros... no dejen que la corporación haga esto de nuevo.'\n\nEntras a la cápsula. Chen cierra la puerta detrás de ti y activa el lanzamiento. La cápsula se lanza al espacio. Miras atrás y ves la estación Helios-9 alejándose. Sobreviviste. Y llevas la verdad contigo.\n\nFINAL: EL TESTIGO.",
             "type": "ending",
             "result": "éxito"
+        },
+        "node_chen_info": {
+            "text": "'Cuéntame todo', dices. 'Necesito entender.'\n\nChen asiente. 'Organismo XB-7. Encontrado en asteroide. Parasitario. Infecta, transforma, reproduce. Corporación quería arma biológica. Nos ordenó estudiarlo. Escapó. Infectó a todos. Yo... resistí porque me inyecté el suero temprano. Pero no es cura. Solo... tiempo extra.'\n\n'¿Cómo se detiene?', preguntas.\n\n'Fuego. Vacío del espacio. O... autodestrucción de la estación. Reactor puede sobrecargarse.'\n\nMientras habla, comienza a convulsionar. 'Vete... ahora... tiempo... acabando...'\n\nSu transformación se acelera.",
+            "choices": [
+                {
+                    "text": "Dejarla y buscar el reactor.",
+                    "next": "node_reactor_path"
+                },
+                {
+                    "text": "Quedarte con ella hasta el final.",
+                    "next": "node_stay_chen"
+                }
+            ]
+        },
+        "node_leave_chen": {
+            "text": "Decides no confiar completamente. 'Gracias por la información', dices, 'pero voy a encontrar mi propio camino.'\n\nChen asiente tristemente. 'Entiendo. Buena suerte.'\n\nSales de la enfermería. Ahora sabes más sobre la infección, pero estás solo de nuevo.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Ir al reactor para destruir la estación.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_mercy_kill": {
+            "text": "Disparas. Es un acto de misericordia. La doctora Chen cae, liberada de su tormento.\n\nSales de la enfermería. Ahora sabes que la estación está perdida. Solo queda escapar o destruirla.",
+            "choices": [
+                {
+                    "text": "Buscar escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Destruir la estación.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_flee_medbay": {
+            "text": "Corres fuera de la enfermería justo cuando Chen se transforma completamente. Escuchas su grito final, mitad humano, mitad monstruo.\n\nEstás en el pasillo. Necesitas decidir rápido.",
+            "choices": [
+                {
+                    "text": "Ir al Centro de Mando.",
+                    "next": "node_command_from_medbay"
+                },
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                }
+            ]
+        },
+        "node_secret_pod": {
+            "text": "Chen te guía a la oficina del capitán. Detrás de un panel falso hay una cápsula de escape personal, de lujo, con provisiones y comunicaciones.\n\n'Vete', dice Chen. 'Advierte a otros.'\n\nEntras a la cápsula. Chen activa el lanzamiento desde fuera y cierra la puerta. La cápsula se lanza al espacio.\n\nMiras atrás. La estación se aleja. Sobreviviste.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Transmites tu informe a la corporación. Te rescatan días después. Sobreviviste para contar la historia.\n\nFINAL: EL SUPERVIVIENTE AFORTUNADO."
+        },
+        "node_chen_destruction": {
+            "text": "'Primero necesito destruir la estación', dices. 'No puede propagarse.'\n\nChen asiente. 'Reactor. Sobrecarga. Yo... te ayudaré. Última... cosa buena... que puedo hacer.'\n\nJuntos vais al reactor. Chen conoce los códigos. Activa la autodestrucción: 5 minutos.\n\n'Ahora... corre', dice. 'Cápsula... oficina del capitán. Vete.'\n\nCorres. Llegas a la cápsula con 2 minutos restantes. Te lanzas al espacio justo cuando la estación explota detrás de ti.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "La estación Helios-9 es destruida. La infección con ella. Sobreviviste y salvaste a incontables otros.\n\nFINAL: EL HÉROE PRAGMÁTICO."
+        },
+        "node_command_from_medbay": {
+            "text": "Subes al Centro de Mando. Encuentras al capitán muerto y la tarjeta OMEGA. También encuentras la consola de autodestrucción.\n\nPuedes activarla, pero necesitarás tiempo para escapar después.",
+            "choices": [
+                {
+                    "text": "Activar autodestrucción con temporizador de 10 minutos.",
+                    "next": "node_timed_destruct"
+                },
+                {
+                    "text": "Solo tomar la tarjeta y buscar otra opción.",
+                    "next": "node_take_card"
+                }
+            ]
+        },
+        "node_hangar_from_medbay": {
+            "text": "Bajas al hangar. Ves los huevos alienígenas por todas partes. Algunos ya han eclosionado. Criaturas pequeñas se mueven entre las sombras.\n\nEsto es demasiado peligroso. Retrocedes.",
+            "choices": [
+                {
+                    "text": "Ir al Centro de Mando en su lugar.",
+                    "next": "node_command_from_medbay"
+                },
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                }
+            ]
+        },
+        "node_quick_destruct": {
+            "text": "Insertas la tarjeta y activas la autodestrucción. 'AUTODESTRUCCIÓN EN 5 MINUTOS', anuncia la computadora.\n\nPero no miraste atrás. La criatura del conducto salta sobre ti. Luchas, pero es demasiado fuerte.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Mueres, pero la estación explota 5 minutos después, destruyendo la infección. Tu sacrificio no fue en vano.\n\nFINAL: VICTORIA PÍRRICA."
+        },
+        "node_face_threat": {
+            "text": "Te giras. Es una criatura, pero pequeña, recién transformada. Disparas y la matas fácilmente.\n\nAhora puedes activar la autodestrucción con calma. Configuras 10 minutos y corres hacia las cápsulas de escape.\n\nLlegas con tiempo suficiente. Te lanzas al espacio mientras la estación explota detrás de ti.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Sobreviviste y destruiste la amenaza. Eres un héroe, aunque nadie sabrá exactamente qué pasó en Helios-9.\n\nFINAL: EL EXTERMINADOR."
+        },
+        "node_run_to_pod": {
+            "text": "Corres directamente hacia la cápsula. La criatura en las sombras se mueve. Es enorme, una reina.\n\nIntentas ser rápido, pero ella es más rápida. Te corta el paso. Sus múltiples brazos te atrapan antes de que puedas alcanzar la cápsula.\n\nFue un error subestimar a la reina.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_light_shadows": {
+            "text": "Usas tu arma para iluminar las sombras. El plasma brilla, revelando lo que hay ahí: una criatura reina, del tamaño de un vehículo pequeño.\n\nTe ve. Ruge. Se lanza hacia ti.\n\nDisparas, pero es demasiado grande, demasiado rápida.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "La reina te aplasta. No tuviste oportunidad.\n\nFIN DEL JUEGO."
+        },
+        "node_alternate_route": {
+            "text": "Retrocedes y buscas otra ruta. Encuentras un conducto de mantenimiento que parece rodear la bahía.\n\nTrepas por él. Es estrecho y oscuro. Pero al salir del otro lado, te encuentras cara a cara con un nido de criaturas recién eclosionadas.\n\nNo hay escape. Te cubren en segundos.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_activate_purge": {
+            "text": "Activas la purga biológica. 'INCINERACIÓN EN 60 SEGUNDOS', anuncia el sistema.\n\nCorres hacia la salida. Las llamas comienzan detrás de ti. Llegas a un pasillo seguro justo a tiempo.\n\nEl laboratorio arde, destruyendo toda evidencia. Ahora necesitas escapar de la estación.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Ir al reactor para destruir toda la estación.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_transmit_data": {
+            "text": "Transmites los datos a la corporación. Toda la investigación, todas las advertencias. Luego activas la purga.\n\nMientras el laboratorio arde, recibes una respuesta de la corporación: 'Datos recibidos. Buen trabajo. Bonificación aprobada.'\n\nNo mencionan nada sobre rescatarte. Te das cuenta: querían los datos, no a ti.\n\nAhora debes escapar por tu cuenta.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape rápidamente.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Destruir la estación por despecho.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_ignore_terminal": {
+            "text": "Ignoras el terminal. No es tu problema. Solo quieres sobrevivir.\n\nSales del laboratorio y buscas las cápsulas de escape. Eventualmente las encuentras y escapas.\n\nPero dejaste la investigación intacta. La corporación recuperará los datos... y probablemente intentará de nuevo.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Sobreviviste, pero a qué costo? La amenaza permanece. Quizás deberías haber hecho más.\n\nFINAL: EL EGOÍSTA."
+        },
+        "node_escape_hangar_fire": {
+            "text": "Corres hacia la salida más cercana. El calor es intenso, pero tu traje protege. Sales del hangar justo antes de que una explosión selle la puerta detrás de ti.\n\nEstás a salvo por ahora. El hangar está destruido, pero el resto de la estación sigue infestado.",
+            "choices": [
+                {
+                    "text": "Buscar las cápsulas de escape.",
+                    "next": "node_find_pods"
+                },
+                {
+                    "text": "Ir al reactor para terminar el trabajo.",
+                    "next": "node_reactor_path"
+                }
+            ]
+        },
+        "node_reach_ship": {
+            "text": "Intentas llegar a tu nave en la exclusa superior. Corres por pasillos llenos de humo y fuego.\n\nLlegas a la exclusa. Tu nave está ahí, intacta. Entras, cierras la escotilla, y despegas.\n\nMientras te alejas, ves la estación Helios-9 ardiendo. El hangar explota, causando una reacción en cadena. La estación entera se destruye.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Escapaste en tu propia nave. La estación fue destruida por el fuego que iniciaste. Misión cumplida, de una forma u otra.\n\nFINAL: EL INCENDIARIO."
+        },
+        "node_emergency_hatch": {
+            "text": "Trepas por la escotilla de emergencia. Sales a un conducto de ventilación justo cuando las llamas llenan el laboratorio.\n\nEl conducto te lleva a otra sección de la estación. Sales cerca de las cápsulas de escape.\n\nHay una cápsula funcional. Entras y te lanzas al espacio. Detrás de ti, el laboratorio explota, pero el resto de la estación permanece intacto.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Escapaste, pero solo destruiste el laboratorio. La infección en el resto de la estación sobrevive. Quizás deberías haber hecho más.\n\nFINAL: ESCAPE PARCIAL."
+        },
+        "node_cancel_purge": {
+            "text": "Intentas cancelar la purga, pero el sistema no responde. 'PURGA IRREVERSIBLE', dice la pantalla.\n\nPierdes tiempo valioso. Las llamas comienzan. No llegas a la escotilla a tiempo.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Mueres en el fuego que tú mismo iniciaste. La ironía no te consuela.\n\nFIN DEL JUEGO."
+        },
+        "node_direct_pod": {
+            "text": "Corres directamente a la cápsula. Entras y activas el lanzamiento.\n\nPero algo está mal. La cápsula no responde. Miras los controles y ves con horror que los sistemas internos están cubiertos de sustancia orgánica alienígena.\n\nLa cápsula está saboteada. Y ahora estás atrapado dentro mientras escuchas algo moviéndose en el compartimento de almacenamiento detrás de ti.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_check_area": {
+            "text": "Revisas el área cuidadosamente, buscando amenazas. Encuentras señales de criaturas... muchas señales.\n\nPierdes tiempo valioso inspeccionando. Mientras lo haces, escuchas un siseo detrás de ti. Te giras y ves que las criaturas han rodeado tu posición.\n\nTu cautela te costó la velocidad que necesitabas.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_distract_queen": {
+            "text": "Lanzas un objeto metálico al otro lado de la bahía. La reina se gira hacia el ruido.\n\nCorres hacia la cápsula. Casi lo logras, pero la reina es más inteligente de lo que pensabas. Era una trampa.\n\nSe gira y te atrapa.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "La reina te desgarra. Subestimaste su inteligencia.\n\nFIN DEL JUEGO."
+        },
+        "node_find_other_way": {
+            "text": "Retrocedes y buscas otra forma. Los conductos de mantenimiento forman un laberinto confuso.\n\nTe pierdes en el laberinto de metal. Cada pasillo parece igual. Escuchas criaturas moviéndose en los conductos a tu alrededor.\n\nNunca encuentras la salida. Solo encuentras a ellas.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_run_and_gun": {
+            "text": "Corres disparando a todo lo que se mueve. Las criaturas caen, pero hay demasiadas. Una te alcanza, rasgando tu traje.\n\nOtra te derriba. Intentas seguir, pero son demasiadas. Te cubren mientras tu arma se queda sin energía.\n\nLa estación explota con ustedes dentro.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_safe_route_timed": {
+            "text": "Buscas una ruta más segura. Encuentras un conducto, pero toma demasiado tiempo.\n\nLlegas a la cápsula justo cuando el contador llega a cero. Golpeas el botón de lanzamiento, pero es demasiado tarde.\n\nLa estación explota contigo todavía dentro. No hubo tiempo suficiente.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_reactor_path": {
+            "text": "Vas al reactor. Encuentras el panel de control. Puedes configurar la autodestrucción.\n\nConfiguras 10 minutos. Suficiente para escapar si eres rápido.",
+            "choices": [
+                {
+                    "text": "Correr hacia las cápsulas de escape.",
+                    "next": "node_timed_escape"
+                },
+                {
+                    "text": "Quedarte y asegurarte de que funcione.",
+                    "next": "node_ensure_destruction"
+                }
+            ]
+        },
+        "node_stay_chen": {
+            "text": "Decides quedarte con ella. Es lo correcto.\n\nChen se transforma completamente, pero en sus últimos momentos de lucidez, te mira. 'Gracias... por no... dejarme... sola.'\n\nLuego se va. La criatura que queda te ataca. No tienes oportunidad.",
+            "type": "ending",
+            "result": "fallo",
+            "text": "Tu compasión te mató. Pero moriste como un humano, no como un monstruo.\n\nFIN DEL JUEGO."
+        },
+        "node_timed_destruct": {
+            "text": "Activas la autodestrucción con 10 minutos. Corres hacia las cápsulas de escape.\n\nLlegas con tiempo suficiente. Te lanzas al espacio. La estación explota detrás de ti.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Destruiste la amenaza y sobreviviste. Eres un héroe.\n\nFINAL: EL DESTRUCTOR."
+        },
+        "node_take_card": {
+            "text": "Tomas la tarjeta OMEGA. Podría abrir áreas restringidas. Quizás haya una cápsula de escape mejor en algún lugar.\n\nBuscas y encuentras la oficina personal del capitán. Detrás de un panel secreto hay una cápsula de lujo.\n\nEntras y escapas.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Encontraste la cápsula secreta del capitán. Escapaste con estilo.\n\nFINAL: EL OPORTUNISTA."
+        },
+        "node_timed_escape": {
+            "text": "Corres hacia las cápsulas. El tiempo corre. Llegas con 3 minutos restantes.\n\nEntras a una cápsula y te lanzas. La estación explota detrás de ti. Sobreviviste y destruiste la amenaza.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Misión cumplida. La infección fue destruida y tú sobreviviste.\n\nFINAL: ÉXITO TOTAL."
+        },
+        "node_ensure_destruction": {
+            "text": "Decides quedarte para asegurarte de que el reactor explote. Es demasiado importante.\n\nVes el temporizador bajar: 5... 4... 3... 2... 1...\n\nLa explosión es instantánea. No sientes dolor.",
+            "type": "ending",
+            "result": "éxito",
+            "text": "Te sacrificaste para asegurar la destrucción de la amenaza. Eres un héroe verdadero.\n\nFINAL: EL HÉROE DEFINITIVO."
         }
     }
 }

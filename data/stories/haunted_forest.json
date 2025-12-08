@@ -23,98 +23,228 @@
             ]
         },
         "node_witch_hut": {
-            "text": "Llegas a la cabaña. Huele a guiso. Una anciana te abre la puerta y te invita a pasar. 'Pobre viajero, debes tener hambre', dice con una sonrisa demasiado ancha.",
+            "text": "ACTO 2: LA CABAÑA ENGAÑOSA\n\nLlegas a la cabaña después de caminar varios minutos. Es una construcción extraña, hecha de madera retorcida que parece crecer directamente del suelo. El humo que sale de la chimenea huele a guiso... pero también a algo dulzón y enfermizo que no logras identificar.\n\nUna anciana te abre la puerta antes de que llames. Sus ojos son demasiado brillantes, su sonrisa demasiado ancha. 'Pobre viajero', dice con voz melosa, 'debes tener hambre. Entra, entra. Tengo sopa caliente y pan recién horneado.'\n\nMientras habla, notas detalles perturbadores: sus uñas son demasiado largas y amarillentas, hay huesos colgando del techo como decoración, y en la mesa ves un libro abierto con símbolos que reconoces de las historias de tu abuela... símbolos de brujería oscura.",
             "choices": [
                 {
-                    "text": "Aceptar la comida y entrar.",
+                    "text": "Aceptar la comida y entrar a la cabaña.",
                     "next": "node_eat_death"
                 },
                 {
-                    "text": "Rechazar amablemente y pedir indicaciones.",
-                    "next": "node_rude_curse"
+                    "text": "Rechazar amablemente y pedir solo indicaciones.",
+                    "next": "node_witch_offended"
                 },
                 {
-                    "text": "Atacar a la anciana, ¡es una bruja!",
-                    "next": "node_witch_fight"
+                    "text": "Acusarla de ser una bruja y atacarla.",
+                    "next": "node_witch_confrontation"
                 }
             ]
         },
         "node_altar": {
-            "text": "El altar tiene inscripciones rúnicas. Hay una daga de obsidiana y un cuenco vacío. Sientes una presencia antigua observándote.",
+            "text": "ACTO 2: EL ALTAR ANCESTRAL\n\nEl altar es más antiguo de lo que pensabas. Las piedras están cubiertas de musgo bioluminiscente que emite un suave resplandor verde. Las inscripciones rúnicas parecen moverse cuando no las miras directamente.\n\nEn el centro del altar hay tres objetos: una daga de obsidiana negra como la noche, un cuenco de plata lleno de agua cristalina que refleja estrellas que no están en el cielo, y un pergamino enrollado sellado con cera roja.\n\nSientes una presencia antigua observándote. No es hostil... todavía. Es como si el bosque mismo estuviera esperando para ver qué harás. El aire se siente denso, cargado de magia primordial.",
             "choices": [
                 {
                     "text": "Ofrecer unas gotas de tu propia sangre en el cuenco.",
-                    "next": "node_blood_sacrifice"
+                    "next": "node_blood_offering"
                 },
                 {
-                    "text": "Robar la daga de obsidiana.",
+                    "text": "Tomar la daga de obsidiana como arma.",
                     "next": "node_cursed_dagger"
                 },
                 {
-                    "text": "Leer las runas en voz alta.",
-                    "next": "node_summon_demon"
+                    "text": "Abrir y leer el pergamino sellado.",
+                    "next": "node_read_scroll"
                 }
             ]
         },
         "node_river": {
-            "text": "Sigues el arroyo. El agua brilla con luz propia. Ves sirenas de agua dulce, hermosas pero pálidas, llamándote desde la orilla.",
+            "text": "ACTO 2: EL RÍO ENCANTADO\n\nSigues el sonido del agua hasta llegar a un arroyo de aguas cristalinas. Pero algo está mal. El agua brilla con una luz azulada antinatural, y la corriente fluye en la dirección equivocada: hacia arriba, contra la gravedad.\n\nEn la orilla opuesta, ves figuras etéreas: sirenas de agua dulce con piel pálida como la luna y cabello que fluye como algas. Sus voces son hermosas, cantando una melodía que hace que tu corazón se acelere y tu mente se nuble.\n\n'Ven con nosotras', cantan. 'El agua es cálida. Descansa. Olvida tus preocupaciones.'\n\nPero también notas algo más: piedras planas que cruzan el río como un puente natural, y aguas arriba, donde la corriente se vuelve normal, ves lo que parece ser un viejo molino abandonado.",
             "choices": [
                 {
-                    "text": "Acercarse para beber agua.",
+                    "text": "Acercarse al agua para beber y refrescarte.",
                     "next": "node_drown"
                 },
                 {
-                    "text": "Taparse los oídos y seguir la corriente río abajo.",
-                    "next": "node_escape_river"
+                    "text": "Cruzar el río usando las piedras como puente.",
+                    "next": "node_cross_river"
                 },
                 {
-                    "text": "Intentar hablar con ellas.",
-                    "next": "node_lure_death"
+                    "text": "Ignorar las sirenas y seguir la corriente hacia el molino.",
+                    "next": "node_old_mill"
                 }
             ]
         },
         "node_eat_death": {
-            "text": "Comes el guiso. Sabe delicioso... a carne humana. Te sientes mareado. La anciana se ríe mientras te caes al suelo paralizado. Serás el ingrediente del mañana.\n\nFIN DEL JUEGO.",
+            "text": "Entras y te sientas a la mesa. La anciana te sirve un plato humeante. El primer bocado es delicioso, el segundo también... pero al tercero reconoces el sabor. Es carne humana.\n\nIntentas levantarte pero tus piernas no responden. El guiso estaba envenenado. La anciana se ríe mientras te desplomas al suelo, paralizado. 'Serás el ingrediente especial del mañana', susurra mientras la oscuridad te envuelve.\n\nFIN DEL JUEGO.",
             "type": "ending",
             "result": "fallo"
         },
-        "node_witch_fight": {
-            "text": "Empujas a la anciana al fuego. Ella chilla y se convierte en cenizas. La puerta trasera se abre, revelando el camino fuera del bosque. Has roto el hechizo.\n\nFINAL: EL CAZADOR DE BRUJAS.",
-            "type": "ending",
-            "result": "éxito"
+        "node_witch_offended": {
+            "text": "ACTO 3: LA IRA DE LA BRUJA\n\n'¿Rechazas mi hospitalidad?', dice la anciana, y su voz cambia. Se vuelve más grave, más amenazante. Sus ojos brillan con un fuego verde enfermizo.\n\n'Los maleducados deben aprender modales', gruñe, y levanta una mano retorcida hacia ti. Sientes magia oscura acumulándose en el aire.\n\nPero entonces notas algo: en su cuello cuelga un amuleto que brilla débilmente. También ves que detrás de ella, en la cabaña, hay un espejo cubierto con un paño negro. Y en tu bolsillo, sientes el peso de la pequeña bolsa de sal que siempre llevas para cocinar.",
+            "choices": [
+                {
+                    "text": "Arrojarle la sal a los ojos.",
+                    "next": "node_salt_protection"
+                },
+                {
+                    "text": "Arrancarle el amuleto del cuello.",
+                    "next": "node_amulet_grab"
+                },
+                {
+                    "text": "Correr hacia el espejo cubierto y descubrirlo.",
+                    "next": "node_mirror_trap"
+                }
+            ]
         },
-        "node_rude_curse": {
-            "text": "Ella frunce el ceño. 'Los maleducados se convierten en sapos'. Y POOF, ahora eres un sapo. Al menos no tienes que pagar impuestos.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
+        "node_witch_confrontation": {
+            "text": "ACTO 3: EL DUELO\n\n'¡Bruja!', gritas, y te lanzas hacia ella. La anciana se ríe, y su forma cambia. Su piel se vuelve gris y correosa, sus dedos se alargan en garras, y su boca se llena de dientes afilados.\n\n'Valiente pero tonto', sisea. 'Muchos han intentado matarme. Todos fallaron.'\n\nSe abalanza sobre ti con velocidad sobrenatural. Tienes solo segundos para reaccionar. Ves el fuego de la chimenea ardiendo intensamente, un candelabro de hierro colgando del techo, y la puerta trasera de la cabaña entreabierta.",
+            "choices": [
+                {
+                    "text": "Empujarla hacia el fuego de la chimenea.",
+                    "next": "node_witch_burned"
+                },
+                {
+                    "text": "Derribar el candelabro sobre ella.",
+                    "next": "node_candelabra_miss"
+                },
+                {
+                    "text": "Esquivarla y huir por la puerta trasera.",
+                    "next": "node_escape_hut"
+                }
+            ]
         },
-        "node_blood_sacrifice": {
-            "text": "La sangre toca el cuenco. El bosque se calla. Una niebla verde te rodea y te teletransporta a la linde del bosque. Los espíritus aceptan tu pago.\n\nFINAL: PACTO DE SANGRE.",
-            "type": "ending",
-            "result": "éxito"
+        "node_blood_offering": {
+            "text": "ACTO 3: EL PACTO\n\nUsas la daga para hacer un pequeño corte en tu palma. Dejas caer tres gotas de sangre en el cuenco. El agua se vuelve roja, luego dorada, y finalmente transparente de nuevo.\n\nEl bosque entero se queda en silencio. Ni un susurro, ni un crujido. Entonces, una voz antigua resuena en tu mente: 'Has ofrecido sangre sin que te la pidieran. Eso muestra respeto... o desesperación.'\n\nUna niebla verde comienza a formarse alrededor del altar. Sientes que algo poderoso está despertando.",
+            "choices": [
+                {
+                    "text": "Arrodillarte y pedir humildemente ser guiado a la salida.",
+                    "next": "node_spirit_guide"
+                },
+                {
+                    "text": "Exigir tu libertad como pago por la sangre ofrecida.",
+                    "next": "node_spirit_angry"
+                },
+                {
+                    "text": "Tomar el pergamino del altar mientras el espíritu se manifiesta.",
+                    "next": "node_steal_scroll"
+                }
+            ]
         },
         "node_cursed_dagger": {
-            "text": "Tocas la daga. Se pega a tu mano. Empiezas a sentir una sed de sangre incontrolable. Te conviertes en el nuevo guardián del altar, para siempre.\n\nFIN DEL JUEGO.",
+            "text": "Extiendes la mano hacia la daga. En el momento en que tus dedos tocan el mango de obsidiana, se adhiere a tu piel como si fuera parte de ti.\n\nUn dolor ardiente recorre tu brazo. Sientes una sed de sangre incontrolable creciendo en tu pecho. La daga está maldita, y ahora tú también. Te conviertes en el nuevo guardián del altar, condenado a vagar por el bosque para siempre, atacando a cualquier viajero que se acerque.\n\nFIN DEL JUEGO.",
             "type": "ending",
             "result": "fallo"
         },
-        "node_summon_demon": {
-            "text": "Lees las runas. El suelo se abre. Algo sale. No es amistoso. Te arrastra al inframundo.\n\nFIN DEL JUEGO.",
-            "type": "ending",
-            "result": "fallo"
+        "node_read_scroll": {
+            "text": "ACTO 3: EL CONOCIMIENTO PROHIBIDO\n\nRompes el sello de cera y desenrollas el pergamino. Las palabras están escritas en un idioma que no conoces, pero de alguna manera puedes entenderlas. Es un mapa... un mapa del bosque que muestra caminos ocultos y lugares de poder.\n\nPero también es una advertencia: 'El que lee sin permiso debe pagar el precio del conocimiento.'\n\nEl pergamino comienza a brillar en tus manos. Sientes que algo está cambiando. El bosque te ha marcado.",
+            "choices": [
+                {
+                    "text": "Seguir el mapa hacia el 'Corazón del Bosque'.",
+                    "next": "node_forest_heart"
+                },
+                {
+                    "text": "Usar el mapa para encontrar la salida más rápida.",
+                    "next": "node_false_exit"
+                },
+                {
+                    "text": "Quemar el pergamino para romper la maldición.",
+                    "next": "node_burn_scroll"
+                }
+            ]
         },
         "node_drown": {
-            "text": "Te agachas a beber. Unas manos frías te agarran del cuello y te hunden. El último sonido que oyes son risas burbujeantes.\n\nFIN DEL JUEGO.",
+            "text": "Te acercas al agua, hipnotizado por las voces. Te agachas para beber. El agua está fría... demasiado fría.\n\nUnas manos pálidas y húmedas emergen del río y te agarran del cuello. Intentas gritar pero el agua ya está llenando tus pulmones. Las sirenas te arrastran al fondo mientras sus risas burbujeantes son lo último que escuchas.\n\nFIN DEL JUEGO.",
             "type": "ending",
             "result": "fallo"
         },
-        "node_escape_river": {
-            "text": "Ignoras los cantos. Sigues el río hasta que amanece. El bosque se disipa. Estás mojado y cansado, pero vivo.\n\nFINAL: LA VOLUNTAD DE HIERRO.",
+        "node_cross_river": {
+            "text": "ACTO 3: EL OTRO LADO\n\nIgnoras las voces seductoras y saltas a la primera piedra. Está resbaladiza pero logras mantener el equilibrio. Las sirenas dejan de cantar y sus expresiones se vuelven furiosas.\n\n'¡Tonto!', gritan. '¡Nadie rechaza nuestro regalo!'\n\nEl agua comienza a agitarse violentamente. Tentáculos de agua líquida se alzan intentando derribarte. Debes moverte rápido. Quedan cinco piedras más hasta la otra orilla.",
+            "choices": [
+                {
+                    "text": "Correr lo más rápido posible saltando de piedra en piedra.",
+                    "next": "node_slip_fall"
+                },
+                {
+                    "text": "Moverte lentamente, asegurando cada paso.",
+                    "next": "node_safe_crossing"
+                },
+                {
+                    "text": "Saltar directamente al agua y nadar hasta la orilla.",
+                    "next": "node_swim_death"
+                }
+            ]
+        },
+        "node_old_mill": {
+            "text": "ACTO 3: EL MOLINO OLVIDADO\n\nTe tapas los oídos con las manos y caminas río arriba, ignorando las súplicas cada vez más desesperadas de las sirenas. Eventualmente sus voces se desvanecen.\n\nLlegas a un viejo molino de agua. La rueda está rota y cubierta de musgo, pero la estructura parece sólida. Dentro, encuentras señales de que alguien vivió aquí hace mucho tiempo: una mesa, una silla, y lo más importante, un diario.\n\nAbres el diario. Está escrito por un monje que se refugió aquí hace décadas. La última entrada dice: 'El bosque respeta a quienes muestran voluntad. La salida está donde el sol toca primero al amanecer. Busca el árbol marcado con tres círculos.'",
+            "choices": [
+                {
+                    "text": "Esperar en el molino hasta el amanecer para ver dónde toca el sol.",
+                    "next": "node_dawn_escape"
+                },
+                {
+                    "text": "Salir inmediatamente a buscar el árbol marcado.",
+                    "next": "node_night_search"
+                },
+                {
+                    "text": "Quedarte en el molino, es seguro aquí.",
+                    "next": "node_mill_trap"
+                }
+            ]
+        },
+        "node_salt_protection": {
+            "text": "Sacas la bolsa de sal y se la arrojas a la cara. La bruja chilla como si le hubieras echado ácido. Su piel humea donde la sal la toca.\n\n'¡Maldito seas!', grita, retrocediendo. Su poder se debilita. Aprovechas la confusión y corres hacia el bosque. Detrás de ti, escuchas su maldición final, pero ya estás demasiado lejos.\n\nSigues corriendo hasta que ves la primera luz del amanecer. El bosque se aclara y encuentras un camino conocido.\n\nFINAL: EL ASTUTO.",
             "type": "ending",
             "result": "éxito"
         },
-        "node_lure_death": {
-            "text": "Intentas hablar. Ellas te hipnotizan con sus voces. Entras al agua voluntariamente y te dejas llevar al fondo.\n\nFIN DEL JUEGO.",
+        "node_amulet_grab": {
+            "text": "Te lanzas hacia ella e intentas arrancarle el amuleto. Tus dedos rozan la cadena, pero la bruja es más rápida. Te agarra de la muñeca con fuerza sobrehumana.\n\n'Querías mi poder', sisea. 'Pues tómalo todo.'\n\nEl amuleto brilla y sientes cómo tu energía vital es absorbida. Te conviertes en un cascarón vacío, otro trofeo en la colección de la bruja.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_mirror_trap": {
+            "text": "Corres hacia el espejo, pero la bruja es más rápida de lo que pensabas. Antes de que puedas arrancar el paño, ella te agarra del brazo con fuerza sobrehumana.\n\n'¿Creías que sería tan fácil?', sisea. 'El espejo es MI trampa, no la tuya.'\n\nTe arrastra hacia ella. Sus garras se clavan en tu piel. Lo último que ves es su sonrisa horrible antes de que todo se vuelva negro.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_witch_burned": {
+            "text": "Con todas tus fuerzas, empujas a la bruja hacia el fuego. Ella chilla y se retuerce mientras las llamas la consumen. El olor a azufre llena el aire.\n\nPero mientras arde, su mano se cierra alrededor de tu tobillo. 'Si muero', gruñe, 'tú vienes conmigo.'\n\nLas llamas se extienden a tu ropa. Ambos arden juntos en la cabaña maldita.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_candelabra_miss": {
+            "text": "Saltas y agarras el candelabro, intentando derribarlo sobre la bruja. Pero está más firmemente sujeto de lo que pensabas. Solo logras balancearlo.\n\nLa bruja se ríe. 'Patético', dice, y con un gesto de su mano, el candelabro se suelta... cayendo directamente sobre ti.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_escape_hut": {
+            "text": "Esquivas su ataque y corres hacia la puerta trasera. Sales al bosque y corres sin mirar atrás.\n\nDetrás de ti escuchas su voz: 'Puedes correr, pero el bosque es mío. Nunca escaparás.'\n\nCorres desesperadamente, pero el bosque mismo parece conspirar contra ti. Las raíces se alzan para hacerte tropezar, las ramas te arañan. Y entonces la escuchas: está justo detrás de ti.\n\nSus garras te alcanzan. No hay escape de una bruja en su propio dominio.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_spirit_guide": {
+            "text": "Te arrodillas con humildad. 'Espíritu del bosque', dices, 'he venido por necesidad, no por codicia. Te pido guía para encontrar la salida.'\n\nHay un largo silencio. Luego, la niebla verde se condensa formando la silueta de un ciervo espectral. 'Tu humildad es rara en estos tiempos', dice una voz que parece venir del bosque mismo. 'Te guiaré.'\n\nEl ciervo camina delante de ti, iluminando el camino. Al amanecer, llegas al borde del bosque. El ciervo se desvanece con un asentimiento final.\n\nFINAL: EL PEREGRINO BENDECIDO.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_spirit_angry": {
+            "text": "'¡Exijo mi libertad!', gritas. 'He pagado con mi sangre.'\n\nLa niebla se vuelve roja. 'Exiges', retumba la voz, ahora furiosa. 'No pides. No suplicas. Exiges como si tuvieras derecho.'\n\nEl suelo se abre bajo tus pies. Caes en la oscuridad, y lo último que ves es el altar alejándose sobre ti mientras desciendes al inframundo del bosque.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_steal_scroll": {
+            "result": "fallo"
+        },
+        "node_dawn_escape": {
+            "text": "Decides esperar. Las horas pasan lentamente. Escuchas cosas moviéndose afuera, pero el molino se mantiene seguro.\n\nFinalmente, los primeros rayos del sol entran por la ventana. Sigues la luz y encuentras un árbol con tres círculos tallados en la corteza. Detrás de él, un camino claro que lleva fuera del bosque.\n\nCaminas hacia la libertad mientras el sol se alza completamente.\n\nFINAL: EL PACIENTE.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_night_search": {
+            "text": "Impaciente, sales a buscar el árbol marcado en la oscuridad. Pero de noche, todos los árboles parecen iguales. Te pierdes rápidamente.\n\nMientras buscas, algo te observa desde las sombras. Algo que caza en la noche. Nunca ves qué es, pero sientes sus garras.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_mill_trap": {
+            "text": "Decides que el molino es seguro y te quedas. Pero el bosque no perdona a quienes se rinden. Lentamente, el molino comienza a cambiar.\n\nLas paredes se vuelven orgánicas, pulsantes. Te das cuenta demasiado tarde: el molino es una trampa, una boca que se cierra lentamente. Quedas atrapado para siempre.\n\nFIN DEL JUEGO.",
             "type": "ending",
             "result": "fallo"
         }
