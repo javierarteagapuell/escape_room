@@ -197,6 +197,14 @@ h1 {
     }
 }
 
+.decision-prompt {
+    color: var(--accent-blue);
+    font-size: 1.15rem;
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 #choice-area {
     padding: 2rem;
     background: #111;

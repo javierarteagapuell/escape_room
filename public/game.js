@@ -51,7 +51,15 @@ function renderScene(data) {
         }
     }
 
-    textBlock.innerHTML = data.texto_descriptivo.replace(/\n/g, '<br>');
+    // Añadir texto de la historia
+    let storyText = data.texto_descriptivo.replace(/\n/g, '<br>');
+
+    // Si no es final, añadir pregunta
+    if (!data.es_final && data.opciones && data.opciones.length > 0) {
+        storyText += '<br><strong class="decision-prompt">¿Qué decisión tomas?</strong>';
+    }
+
+    textBlock.innerHTML = storyText;
     output.innerHTML = ''; // Limpiar anterior para esta versión (o podríamos acumular)
     // Para CYOA, a veces es mejor limpiar o dejar historial. Vamos a limpiar para estilo "pantalla de escena".
     output.appendChild(textBlock);
@@ -103,7 +111,7 @@ function renderScene(data) {
         data.opciones.forEach((texto, index) => {
             const btn = document.createElement('button');
             btn.className = 'choice-btn';
-            btn.textContent = `${index + 1}. ${texto}`; // Añadir número
+            btn.textContent = texto; // Sin número
             btn.onclick = () => sendChoice(index);
             choicesContainer.appendChild(btn);
         });
