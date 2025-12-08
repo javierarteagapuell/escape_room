@@ -231,6 +231,38 @@
             "result": "fallo"
         },
         "node_steal_scroll": {
+            "text": "Mientras el espíritu se manifiesta, aprovechas para tomar el pergamino del altar. La niebla se detiene abruptamente.\n\n'Ladrón', susurra la voz, ahora fría como el hielo. 'Has tomado lo que no te pertenece.'\n\nRaíces emergen del suelo y te atrapan. El bosque te reclama, y te conviertes en parte de él, otro árbol retorcido en el Bosque de los Susurros.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_forest_heart": {
+            "text": "Sigues el mapa hacia el centro del bosque. El camino se vuelve más oscuro, más denso. Finalmente llegas a un claro donde un árbol enorme y antiguo se alza, pulsando con energía mágica.\n\nEste es el Corazón del Bosque. Una voz resuena: 'Has llegado al lugar donde pocos se atreven. ¿Qué buscas?'\n\nRespondes con honestidad sobre tu hermana enferma. El árbol se estremece, y una rama baja, ofreciéndote una flor brillante. 'Esta curará cualquier enfermedad. Tómala y vete. El bosque te ha juzgado digno.'\n\nTomas la flor y el bosque mismo te guía hacia la salida. Al amanecer, estás fuera, con la cura en tus manos.\n\nFINAL: EL ELEGIDO DEL BOSQUE.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_false_exit": {
+            "text": "Sigues el mapa hacia lo que parece ser la salida más cercana. Caminas durante horas, pero el paisaje comienza a repetirse. Estás caminando en círculos.\n\nEl mapa te ha engañado. Era una trampa para los codiciosos que buscan el camino fácil. Te pierdes más profundamente en el bosque hasta que el cansancio te vence.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_burn_scroll": {
+            "text": "Prendes fuego al pergamino. Arde con llamas verdes y un grito agudo llena el aire. La marca que sentías en tu alma desaparece.\n\nPero al destruir el mapa, también has destruido tu mejor oportunidad de encontrar la salida. Vagas por el bosque hasta que el amanecer te encuentra... pero nunca encuentras el camino de vuelta.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_slip_fall": {
+            "text": "Corres y saltas de piedra en piedra. Casi lo logras, pero en la última piedra tu pie resbala. Caes al agua.\n\nLas sirenas te atrapan inmediatamente, arrastrándote al fondo con risas triunfantes.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_safe_crossing": {
+            "text": "Te mueves con cuidado, probando cada piedra antes de poner tu peso completo. Los tentáculos de agua intentan derribarte, pero tu equilibrio es perfecto.\n\nLlegas a la otra orilla. Las sirenas gritan frustradas pero no pueden seguirte. Sigues adelante y eventualmente encuentras un sendero que te lleva fuera del bosque al amanecer.\n\nFINAL: LA VOLUNTAD DE HIERRO.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_swim_death": {
+            "text": "Decides que nadar será más rápido. Saltas al agua y comienzas a nadar. Pero el río está encantado. La corriente te arrastra hacia abajo con fuerza imposible.\n\nLas sirenas no necesitan siquiera tocarte. El río mismo te ahoga.\n\nFIN DEL JUEGO.",
+            "type": "ending",
             "result": "fallo"
         },
         "node_dawn_escape": {
