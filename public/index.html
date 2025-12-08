@@ -9,7 +9,50 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- Pantalla de Introducción (Portada) -->
+    <div id="intro-screen" class="fullscreen-screen">
+        <div class="intro-content">
+            <h1 class="main-title">HISTORIAS INTERACTIVAS</h1>
+            <div class="cover-image-wrapper">
+                <img src="https://image.pollinations.ai/prompt/cinematic%20book%20collection%20multiple%20adventures%20sci-fi%20fantasy%20horror%20mysterious%20dark%20atmospheric?width=600&height=800&nologo=true&seed=main"
+                    alt="Portada del Sistema" class="cover-image">
+            </div>
+            <button id="btn-show-rules" class="start-btn">ENTRAR AL SISTEMA</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Reglas -->
+    <div id="rules-screen" class="fullscreen-screen hidden">
+        <div class="rules-content">
+            <h2>PROTOCOLOS DE MISIÓN</h2>
+            <div class="rules-text">
+                <p>Bienvenido, recluta. Estás a punto de ingresar a <strong>La Bóveda Hundida</strong>.</p>
+                <p>Esta es una experiencia narrativa interactiva de supervivencia.</p>
+                <ul>
+                    <li>⚠️ Se te presentarán situaciones críticas.</li>
+                    <li>👉 Tendrás exactamente <strong>3 opciones</strong> para elegir.</li>
+                    <li>☠️ Ten cuidado: tus decisiones determinarán tu destino. Un movimiento en falso podría ser fatal.
+                    </li>
+                </ul>
+                <p>Confía en tus instintos.</p>
+            </div>
+            <button id="btn-to-selection" class="start-btn">SELECCIONAR MISIÓN</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Selección de Historia -->
+    <div id="story-selection-screen" class="fullscreen-screen hidden">
+        <div class="selection-content">
+            <h2>ARCHIVOS DE MISIÓN</h2>
+            <p>Seleccione el expediente que desea investigar:</p>
+            <div id="stories-list" class="stories-grid">
+                <!-- Las historias se cargarán aquí dinámicamente -->
+                <div class="loading-spinner">Cargando misiones...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hidden" id="game-container">
         <header>
             <h1>LA BÓVEDA HUNDIDA</h1>
             <div id="status-bar">

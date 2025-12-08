@@ -1,0 +1,122 @@
+{
+    "id": "haunted_forest",
+    "title": "El Bosque de los Susurros",
+    "theme": "fantasy horror dark forest magic",
+    "description": "Te perdiste en el bosque prohibido. Dicen que los árboles tienen ojos y que nadie sale antes del amanecer.",
+    "start_node": "intro",
+    "nodes": {
+        "intro": {
+            "text": "La niebla se cierra a tu alrededor. Los árboles parecen inclinarse para escucharte. Has perdido el sendero hace horas. Tienes frío y hambre. A lo lejos, ves tres cosas llamativas.",
+            "choices": [
+                {
+                    "text": "Una luz cálida que parece una cabaña.",
+                    "next": "node_witch_hut"
+                },
+                {
+                    "text": "Un antiguo altar de piedra cubierto de musgo.",
+                    "next": "node_altar"
+                },
+                {
+                    "text": "Seguir el sonido de un arroyo cercano.",
+                    "next": "node_river"
+                }
+            ]
+        },
+        "node_witch_hut": {
+            "text": "Llegas a la cabaña. Huele a guiso. Una anciana te abre la puerta y te invita a pasar. 'Pobre viajero, debes tener hambre', dice con una sonrisa demasiado ancha.",
+            "choices": [
+                {
+                    "text": "Aceptar la comida y entrar.",
+                    "next": "node_eat_death"
+                },
+                {
+                    "text": "Rechazar amablemente y pedir indicaciones.",
+                    "next": "node_rude_curse"
+                },
+                {
+                    "text": "Atacar a la anciana, ¡es una bruja!",
+                    "next": "node_witch_fight"
+                }
+            ]
+        },
+        "node_altar": {
+            "text": "El altar tiene inscripciones rúnicas. Hay una daga de obsidiana y un cuenco vacío. Sientes una presencia antigua observándote.",
+            "choices": [
+                {
+                    "text": "Ofrecer unas gotas de tu propia sangre en el cuenco.",
+                    "next": "node_blood_sacrifice"
+                },
+                {
+                    "text": "Robar la daga de obsidiana.",
+                    "next": "node_cursed_dagger"
+                },
+                {
+                    "text": "Leer las runas en voz alta.",
+                    "next": "node_summon_demon"
+                }
+            ]
+        },
+        "node_river": {
+            "text": "Sigues el arroyo. El agua brilla con luz propia. Ves sirenas de agua dulce, hermosas pero pálidas, llamándote desde la orilla.",
+            "choices": [
+                {
+                    "text": "Acercarse para beber agua.",
+                    "next": "node_drown"
+                },
+                {
+                    "text": "Taparse los oídos y seguir la corriente río abajo.",
+                    "next": "node_escape_river"
+                },
+                {
+                    "text": "Intentar hablar con ellas.",
+                    "next": "node_lure_death"
+                }
+            ]
+        },
+        "node_eat_death": {
+            "text": "Comes el guiso. Sabe delicioso... a carne humana. Te sientes mareado. La anciana se ríe mientras te caes al suelo paralizado. Serás el ingrediente del mañana.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_witch_fight": {
+            "text": "Empujas a la anciana al fuego. Ella chilla y se convierte en cenizas. La puerta trasera se abre, revelando el camino fuera del bosque. Has roto el hechizo.\n\nFINAL: EL CAZADOR DE BRUJAS.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_rude_curse": {
+            "text": "Ella frunce el ceño. 'Los maleducados se convierten en sapos'. Y POOF, ahora eres un sapo. Al menos no tienes que pagar impuestos.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_blood_sacrifice": {
+            "text": "La sangre toca el cuenco. El bosque se calla. Una niebla verde te rodea y te teletransporta a la linde del bosque. Los espíritus aceptan tu pago.\n\nFINAL: PACTO DE SANGRE.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_cursed_dagger": {
+            "text": "Tocas la daga. Se pega a tu mano. Empiezas a sentir una sed de sangre incontrolable. Te conviertes en el nuevo guardián del altar, para siempre.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_summon_demon": {
+            "text": "Lees las runas. El suelo se abre. Algo sale. No es amistoso. Te arrastra al inframundo.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_drown": {
+            "text": "Te agachas a beber. Unas manos frías te agarran del cuello y te hunden. El último sonido que oyes son risas burbujeantes.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_escape_river": {
+            "text": "Ignoras los cantos. Sigues el río hasta que amanece. El bosque se disipa. Estás mojado y cansado, pero vivo.\n\nFINAL: LA VOLUNTAD DE HIERRO.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_lure_death": {
+            "text": "Intentas hablar. Ellas te hipnotizan con sus voces. Entras al agua voluntariamente y te dejas llevar al fondo.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        }
+    }
+}

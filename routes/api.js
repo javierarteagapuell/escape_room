@@ -2,12 +2,18 @@ const express = require('express');
 const router = express.Router();
 const engine = require('../services/engine');
 
-// Cargar al inicio
+// Cargar al inicio (default)
 engine.loadGameData();
 
+router.get('/stories', (req, res) => {
+    const stories = engine.getStories();
+    res.json(stories);
+});
+
 router.post('/start', (req, res) => {
-    // Al llamar a start, reiniciamos la sesión interna
-    engine.loadGameData();
+    const { storyId } = req.body;
+    // Al llamar a start, reiniciamos la sesión interna con la historia elegida
+    engine.loadGameData(storyId);
     const data = engine.getIntro();
     res.json(data);
 });

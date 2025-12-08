@@ -6,16 +6,65 @@ let currentSession = {
     currentNodeId: null
 };
 
-const dataDir = path.join(__dirname, '../data');
+const storiesDir = path.join(__dirname, '../data/stories');
 
-function loadGameData() {
+function getStories() {
     try {
-        storyData = JSON.parse(fs.readFileSync(path.join(dataDir, 'story.json'), 'utf8'));
+        if (!fs.existsSync(storiesDir)) {
+            console.error("Directorio de historias no encontrado: " + storiesDir);
+            return [];
+        }
+        const files = fs.readdirSync(storiesDir).filter(file => file.endsWith('.json'));
+        const stories = files.map(file => {
+            try {
+                const content = JSON.parse(fs.readFileSync(path.join(storiesDir, file), 'utf8'));
+                // Usa el ID del archivo si no hay ID en el JSON, o el nombre del archivo
+                const id = content.id || file.replace('.json', '');
+                return {
+                    id: id,
+                    title: content.title || "Historia Sin Título",
+                    description: content.description || "Sin descripción disponible.",
+                    theme: content.theme || "generic"
+                };
+            } catch (e) {
+                console.error(`Error leyendo ${file}:`, e);
+                return null;
+            }
+        }).filter(s => s !== null);
+        return stories;
+    } catch (err) {
+        console.error("Error leyendo directorio de historias:", err);
+        return [];
+    }
+}
+
+function loadGameData(storyId) {
+    try {
+        // Encontrar el archivo basado en el ID
+        const files = fs.readdirSync(storiesDir).filter(file => file.endsWith('.json'));
+        let targetFile = null;
+
+        if (storyId) {
+            // Buscar por ID dentro del JSON o nombre de archivo
+            targetFile = files.find(file => {
+                const content = JSON.parse(fs.readFileSync(path.join(storiesDir, file), 'utf8'));
+                return content.id === storyId || file.replace('.json', '') === storyId;
+            });
+        }
+
+        // Fallback: Cargar el primero si no se especifica o no se encuentra
+        if (!targetFile) {
+            targetFile = files.find(f => f === 'deep_sea.json') || files[0];
+        }
+
+        if (!targetFile) throw new Error("No se encontraron historias.");
+
+        storyData = JSON.parse(fs.readFileSync(path.join(storiesDir, targetFile), 'utf8'));
         resetGame();
-        console.log("Datos de la historia cargados.");
+        console.log(`Historia cargada: ${storyData.title} (${storyData.id})`);
         return true;
     } catch (err) {
-        console.error("Error cargando story.json:", err);
+        console.error("Error cargando historia:", err);
         return false;
     }
 }
@@ -29,6 +78,8 @@ function getIntro() {
 }
 
 function processAction(choiceIndex) {
+    if (!storyData.nodes) return { error: "No hay historia cargada" };
+
     const currentNode = storyData.nodes[currentSession.currentNodeId];
 
     // Validar nodo actual
@@ -60,7 +111,8 @@ function getNodeData(nodeId) {
         texto_descriptivo: node.text,
         resultado: node.result || "neutral",
         es_final: node.type === 'ending',
-        acciones_sugeridas: [] // Ahora son opciones estrictas
+        acciones_sugeridas: [],
+        story_title: storyData.title || "Historia Desconocida"
     };
 
     if (node.choices) {
@@ -73,4 +125,4 @@ function getNodeData(nodeId) {
     return response;
 }
 
-module.exports = { loadGameData, processAction, getIntro };
+module.exports = { loadGameData, processAction, getIntro, getStories };

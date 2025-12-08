@@ -1,0 +1,122 @@
+{
+    "id": "space_station",
+    "title": "La Estación Silenciosa",
+    "theme": "sci-fi space horror aliens",
+    "description": "Una señal de socorro te lleva a una estación minera en asteroides. No hay nadie... vivo.",
+    "start_node": "intro",
+    "nodes": {
+        "intro": {
+            "text": "Tu nave se acopla a la exclusa de la estación minera 'Helios-9'. Las luces parpadean. El escáner de vida muestra lecturas erráticas. Al abrir la puerta, un olor a ozono y carne quemada te golpea.\n\nFrente a ti hay tres caminos.",
+            "choices": [
+                {
+                    "text": "Ir al Centro de Mando para revisar los registros.",
+                    "next": "node_command"
+                },
+                {
+                    "text": "Bajar a la Enfermería para buscar supervivientes.",
+                    "next": "node_medbay"
+                },
+                {
+                    "text": "Dirigirse al Hangar para asegurar una ruta de escape.",
+                    "next": "node_hangar"
+                }
+            ]
+        },
+        "node_command": {
+            "text": "Entras al Centro de Mando. Pantallas rotas. En el suelo yace el capitán, con el pecho abierto. En su mano tiene una tarjeta de acceso ensangrentada. De repente, oyes un ruido en los conductos de ventilación sobre ti.",
+            "choices": [
+                {
+                    "text": "Coger la tarjeta y correr hacia el ascensor.",
+                    "next": "node_elevator_escape"
+                },
+                {
+                    "text": "Disparar al conducto de ventilación.",
+                    "next": "node_vent_attack"
+                },
+                {
+                    "text": "Esconderse bajo la consola principal.",
+                    "next": "node_hide_death"
+                }
+            ]
+        },
+        "node_medbay": {
+            "text": "La enfermería está llena de cápsulas de estasis rotas. Un líquido verde cubre el suelo. Ves una sombra que se mueve detrás de una cortina médica. Es humanoide, pero sus movimientos son espasmódicos.",
+            "choices": [
+                {
+                    "text": "Preguntar '¿Hay alguien ahí?'",
+                    "next": "node_scream_death"
+                },
+                {
+                    "text": "Acercarse sigilosamente con el arma lista.",
+                    "next": "node_ambush"
+                },
+                {
+                    "text": "Salir de la habitación lentamente.",
+                    "next": "node_corridor_chase"
+                }
+            ]
+        },
+        "node_hangar": {
+            "text": "El hangar es enorme. Tu nave está ahí, pero hay... huevos. Cientos de huevos alienígenas pegados al casco de tu nave. Uno de ellos empieza a abrirse justo cuando llegas.",
+            "choices": [
+                {
+                    "text": "Correr a la nave e intentar despegar ya.",
+                    "next": "node_ship_infestation"
+                },
+                {
+                    "text": "Usar el lanzallamas de emergencia del hangar.",
+                    "next": "node_fire_win"
+                },
+                {
+                    "text": "Intentar quitar los huevos manualmente.",
+                    "next": "node_acid_burn"
+                }
+            ]
+        },
+        "node_vent_attack": {
+            "text": "Disparas. Un chillido inhumano resuena. Algo cae del techo, herido pero furioso. Es una criatura de garras afiladas. Antes de que puedas recargar, salta sobre ti.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_hide_death": {
+            "text": "Te escondes. La criatura baja. Oyes sus pasos pesados. Se detiene justo frente a la consola. Huele tu miedo. Las garras atraviesan el metal y te atrapan.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_elevator_escape": {
+            "text": "Corres al ascensor y pasas la tarjeta. Las puertas se cierran justo cuando las garras rasgan el metal. Subes a las cápsulas de escape. Te lanzas al espacio, dejando atrás la pesadilla.\n\nFINAL: ESCAPE POR LOS PELOS.",
+            "type": "ending",
+            "result": "éxito"
+        },
+        "node_scream_death": {
+            "text": "Gritas. La figura se gira. No tiene cara, solo una boca llena de dientes circulares. Lanza un proyectil de hueso que te atraviesa el cuello.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_ambush": {
+            "text": "Te acercas. La criatura es rápida, pero tú disparas primero. Cae muerta. Sin embargo, el ruido atrae a más. Tienes que huir, pero ahora bloquean la salida.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_corridor_chase": {
+            "text": "Sales y bloqueas la puerta. Corres hacia las cápsulas de escape, pero en el pasillo te encuentras con la reina del enjambre. Es demasiado grande para pelear.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_ship_infestation": {
+            "text": "Entras y despegas. Crees que estás a salvo hasta que escuchas un siseo detrás del asiento del piloto. Un 'polizón' ha venido contigo.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_acid_burn": {
+            "text": "Tocas un huevo. Explota en ácido. Tu traje se derrite, y luego tú. Mala idea.\n\nFIN DEL JUEGO.",
+            "type": "ending",
+            "result": "fallo"
+        },
+        "node_fire_win": {
+            "text": "Agarras el lanzallamas. '¡Comed fuego!'. Incendias los huevos y a la reina que acaba de aparecer. Corres a tu nave mientras el hangar arde. Despegas triunfante viendo la explosión de la estación.\n\nFINAL: EL PURIFICADOR.",
+            "type": "ending",
+            "result": "éxito"
+        }
+    }
+}
