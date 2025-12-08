@@ -67,7 +67,10 @@ function renderScene(data) {
     placeholder.innerHTML = '<div class="loading-spinner-img">⏳ Generando imagen...</div>';
     imageContainer.appendChild(placeholder);
 
-    const encodedPrompt = encodeURIComponent(`cinematic shot, dark ominous sci-fi submarine atmosphere, underwater, 8k, highly detailed, ${data.texto_descriptivo.substring(0, 100)}`);
+    // Usar el tema de la historia para generar imágenes apropiadas
+    const storyTheme = data.story_theme || 'dark atmospheric';
+    const sceneDescription = data.texto_descriptivo.substring(0, 150);
+    const encodedPrompt = encodeURIComponent(`cinematic shot, ${storyTheme}, 8k, highly detailed, ${sceneDescription}`);
     const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=512&height=512&nologo=true&seed=${Math.random()}`;
 
     const img = document.createElement('img');

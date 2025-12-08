@@ -112,7 +112,8 @@ function getNodeData(nodeId) {
         resultado: node.result || "neutral",
         es_final: node.type === 'ending',
         acciones_sugeridas: [],
-        story_title: storyData.title || "Historia Desconocida"
+        story_title: storyData.title || "Historia Desconocida",
+        story_theme: storyData.theme || "dark atmospheric"
     };
 
     if (node.choices) {
