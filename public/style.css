@@ -32,10 +32,37 @@ header {
     background: #111;
     padding: 1.5rem;
     border-bottom: 2px solid var(--accent-red);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.back-btn:hover {
+    background: var(--accent-blue);
+    color: black;
+    box-shadow: 0 0 10px var(--accent-blue);
 }
 
 h1 {
@@ -129,6 +156,27 @@ h1 {
 
     #game-output {
         width: 100%;
+    }
+
+    header {
+        grid-template-columns: auto 1fr;
+        padding: 1rem;
+    }
+
+    #status-bar {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .back-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+        text-align: left;
     }
 }
 

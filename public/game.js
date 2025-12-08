@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.getElementById('game-container');
     const btnShowRules = document.getElementById('btn-show-rules');
     const btnToSelection = document.getElementById('btn-to-selection');
+    const btnBackToMenu = document.getElementById('btn-back-to-menu');
     const storiesList = document.getElementById('stories-list');
 
     let selectedStoryId = null;
@@ -133,6 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
         rulesScreen.classList.add('hidden');
         storySelectionScreen.classList.remove('hidden');
         await loadStories();
+    });
+
+    // Transición: Juego -> Selección de Historia (Volver al menú)
+    btnBackToMenu.addEventListener('click', () => {
+        gameContainer.classList.add('hidden');
+        storySelectionScreen.classList.remove('hidden');
     });
 
     // Cargar historias disponibles
