@@ -107,13 +107,14 @@ async function generateImages() {
             if (fs.existsSync(imagePath)) {
                 try {
                     const stats = fs.statSync(imagePath);
-                    if (stats.size > 1000) {
+                    if (stats.size > 2000) { // Increased to 2KB to be safe
                         console.log(`  [SKIP] Bajada válida para nodo: ${nodeId}`);
                         continue;
                     }
-                    console.log(`  [RETRY] Imagen corrupta o pequeña para nodo: ${nodeId}`);
+                    console.log(`  [RETRY] Imagen corrupta o pequeña (${stats.size}b) para nodo: ${nodeId}. Eliminando...`);
+                    fs.unlinkSync(imagePath); // Force delete before retry
                 } catch (e) {
-                    console.log(`  [RETRY] Error leyendo stats para nodo: ${nodeId}`);
+                    console.log(`  [RETRY] Error leyendo/borrando archivo para nodo: ${nodeId}`);
                 }
             }
 
