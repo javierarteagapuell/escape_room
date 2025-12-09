@@ -71,37 +71,52 @@ function renderScene(data) {
     output.appendChild(textBlock);
     output.scrollTop = 0; // Force scroll to top for new text
 
-    // 1.5 Mostrar Imagen Dinámica con Placeholder
+    // 1.5 Mostrar Imagen
     const imageContainer = document.getElementById('game-image-container');
     imageContainer.innerHTML = ''; // Limpiar anterior
 
-    // Crear placeholder que se muestra inmediatamente
+    // Crear placeholder
     const placeholder = document.createElement('div');
     placeholder.className = 'image-placeholder';
-    placeholder.innerHTML = '<div class="loading-spinner-img">⏳ Generando imagen...</div>';
+    placeholder.innerHTML = '<div class="loading-spinner-img">⏳ Cargando escena...</div>';
     imageContainer.appendChild(placeholder);
-
-    // Usar el tema de la historia para generar imágenes apropiadas
-    const storyTheme = data.story_theme || 'dark atmospheric';
-    const sceneDescription = data.texto_descriptivo.substring(0, 150);
-    const encodedPrompt = encodeURIComponent(`cinematic shot, ${storyTheme}, 8k, highly detailed, ${sceneDescription}`);
-    const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=512&height=512&nologo=true&seed=${Math.random()}`;
 
     const img = document.createElement('img');
     img.id = 'game-image';
-    img.src = imageUrl;
     img.alt = "Visualización de la escena";
     img.style.opacity = '0'; // Empieza invisible
 
+    // Lógica de carga con fallback
+    const localImageUrl = `/images/${currentStoryId}/${data.id}.jpg`;
+
+    // Generación dinámica (fallback)
+    const storyTheme = data.story_theme || 'dark atmospheric';
+    const sceneDescription = data.texto_descriptivo.substring(0, 150);
+    const encodedPrompt = encodeURIComponent(`cinematic shot, ${storyTheme}, 8k, highly detailed, ${sceneDescription}`);
+    // Usamos seed basado en nodeId para que si se regenera sea consistente, o random si se prefiere variedad
+    // Para consistencia con lo 'pre-generado', usaría el nodeId como seed, pero Math.random añade variedad.
+    // Usemos Math.random() para el fallback dinámico para mantener comportamiento original.
+    const dynamicImageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=512&height=512&nologo=true&seed=${Math.random()}`;
+
+    // Intentar cargar local primero
+    img.src = localImageUrl;
+
     img.onload = () => {
-        // Cuando carga, quitar placeholder y mostrar imagen con fade-in
+        // Éxito cargando (ya sea local o dinámica)
         placeholder.remove();
         imageContainer.appendChild(img);
         setTimeout(() => { img.style.opacity = '1'; }, 10);
     };
 
     img.onerror = () => {
-        placeholder.remove(); // Quitar placeholder si falla
+        // Si falla la local, intentar la dinámica
+        if (img.src.includes(localImageUrl)) {
+            console.log("Imagen local no encontrada, generando dinámicamente...");
+            img.src = dynamicImageUrl;
+        } else {
+            // Si falla también la dinámica
+            placeholder.innerHTML = '❌ Error cargando imagen';
+        }
     };
 
     // 2. Generar Botones

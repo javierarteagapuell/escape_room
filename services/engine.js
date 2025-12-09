@@ -108,6 +108,7 @@ function getNodeData(nodeId) {
     if (!node) return { texto_descriptivo: "Error fatal: Nodo de historia no encontrado." };
 
     const response = {
+        id: nodeId,
         texto_descriptivo: node.text,
         resultado: node.result || "neutral",
         es_final: node.type === 'ending',
