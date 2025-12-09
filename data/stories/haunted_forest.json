@@ -2,6 +2,7 @@
     "id": "haunted_forest",
     "title": "El Bosque de los Susurros",
     "theme": "fantasy horror dark forest magic",
+    "difficulty": "NORMAL",
     "description": "Te perdiste en el bosque prohibido. Dicen que los árboles tienen ojos y que nadie sale antes del amanecer.",
     "start_node": "intro",
     "nodes": {

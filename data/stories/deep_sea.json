@@ -2,6 +2,7 @@
     "id": "deep_sea",
     "title": "La Bóveda Hundida",
     "theme": "underwater submarine sci-fi",
+    "difficulty": "MORTAL",
     "description": "Atrapado en un submarino a punto de colapsar. Escapa antes de que sea tarde.",
     "start_node": "intro",
     "nodes": {

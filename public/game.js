@@ -196,6 +196,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const encodedTheme = encodeURIComponent(`cinematic ${story.theme} dark atmospheric 8k highly detailed`);
                 const imageUrl = `https://image.pollinations.ai/prompt/${encodedTheme}?width=600&height=400&nologo=true&seed=${story.id}`;
 
+                // Determine difficulty level for styling
+                const difficulty = story.difficulty; // No default value
+                let diffClass = '';
+                if (difficulty) {
+                    if (difficulty.toUpperCase() === 'MORTAL') diffClass = 'difficulty-mortal';
+                    else if (difficulty.toUpperCase() === 'DIFÍCIL' || difficulty.toUpperCase() === 'DIFICIL') diffClass = 'difficulty-hard';
+                    else if (difficulty.toUpperCase() === 'NORMAL') diffClass = 'difficulty-normal';
+                }
+
+                // Add difficulty class to card only if it exists
+                if (diffClass) {
+                    card.classList.add(diffClass);
+                }
+
                 // Precargar imagen de fondo
                 const bgImage = new Image();
                 bgImage.onload = () => {

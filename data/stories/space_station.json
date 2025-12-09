@@ -2,6 +2,7 @@
     "id": "space_station",
     "title": "La Estación Silenciosa",
     "theme": "sci-fi space horror aliens",
+    "difficulty": "DIFÍCIL",
     "description": "Una señal de socorro te lleva a una estación minera en asteroides. No hay nadie... vivo.",
     "start_node": "intro",
     "nodes": {

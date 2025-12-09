@@ -24,7 +24,8 @@ function getStories() {
                     id: id,
                     title: content.title || "Historia Sin Título",
                     description: content.description || "Sin descripción disponible.",
-                    theme: content.theme || "generic"
+                    theme: content.theme || "generic",
+                    difficulty: content.difficulty || null
                 };
             } catch (e) {
                 console.error(`Error leyendo ${file}:`, e);

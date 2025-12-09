@@ -495,6 +495,94 @@ h1 {
     padding-top: 0.5rem;
 }
 
+/* Difficulty Legend - HUD Style */
+#difficulty-legend {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background: transparent;
+    padding: 0;
+    z-index: 10;
+}
+
+#difficulty-legend h3 {
+    margin: 0 0 1rem 0;
+    font-size: 0.75rem;
+    color: #555;
+    text-align: left;
+    border-bottom: 2px solid var(--accent-red);
+    padding-bottom: 0.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: fit-content;
+    font-weight: 800;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    margin-right: 10px;
+    display: inline-block;
+    box-shadow: 0 0 8px currentColor;
+}
+
+/* Difficulty Colors */
+.dot.normal {
+    background-color: #00ff88;
+    color: #00ff88;
+}
+
+.dot.hard {
+    background-color: #ff9d00;
+    color: #ff9d00;
+}
+
+.dot.mortal {
+    background-color: #ff0040;
+    color: #ff0040;
+}
+
+/* Story Card Difficulty Styling */
+.story-card.difficulty-normal .story-title {
+    color: #00ff88;
+}
+
+.story-card.difficulty-hard .story-title {
+    color: #ff9d00;
+}
+
+.story-card.difficulty-mortal .story-title {
+    color: #ff0040;
+}
+
+/* Hover effects with difficulty colors */
+.story-card.difficulty-normal:hover {
+    border-color: #00ff88;
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+
+.story-card.difficulty-hard:hover {
+    border-color: #ff9d00;
+    box-shadow: 0 8px 20px rgba(255, 157, 0, 0.3);
+}
+
+.story-card.difficulty-mortal:hover {
+    border-color: #ff0040;
+    box-shadow: 0 8px 20px rgba(255, 0, 64, 0.3);
+}
+
 .loading-spinner {
     grid-column: 1 / -1;
     color: #666;
