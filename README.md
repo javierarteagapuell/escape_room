@@ -1,10 +1,10 @@
-# 🎮 Historias de Elección - Interactive Story Game
+# Historias de Elección - Interactive Story Game
 
 > **Elige tu camino. Enfrenta las consecuencias. Sobrevive... si puedes.**
 
 Un juego narrativo interactivo donde cada decisión importa. Inspirado en los clásicos libros de "Elige tu propia aventura", este proyecto combina storytelling inmersivo con tecnología moderna para crear experiencias únicas cada vez que juegas.
 
-## 📖 Sobre el Proyecto
+## Sobre el Proyecto
 
 **Historias de Elección** es una plataforma web de narrativa interactiva que te sumerge en tres mundos peligrosos y fascinantes. Cada historia está cuidadosamente diseñada con múltiples caminos, decisiones difíciles y consecuencias reales. No hay dos partidas iguales.
 
@@ -14,9 +14,9 @@ Lo que hace especial a este proyecto:
 - **Dificultad variable**: Desde historias accesibles hasta desafíos mortales donde solo 1 de cada 3 decisiones te mantiene con vida
 - **Sin instalación**: Juega directamente desde tu navegador
 
-## 🌟 Las Tres Historias
+## Las Tres Historias
 
-### 🌊 La Bóveda Hundida
+### La Bóveda Hundida
 **Dificultad: MORTAL** 🔴
 
 Despiertas en un submarino dañado a 3.000 metros de profundidad. El oxígeno se agota, el casco se agrieta bajo la presión abisal, y cada decisión podría ser tu última. Debes encontrar las cápsulas de escape antes de que el océano te reclame.
@@ -40,35 +40,35 @@ Te perdiste en el bosque prohibido buscando hierbas para tu hermana enferma. Los
 *Temática: Fantasía oscura, folklore*  
 *Finales posibles: 10 (3 son victorias)*
 
-## ✨ Características
+## Características
 
-### 🎨 Visualización Dinámica
+### Visualización Dinámica
 Cada escena genera automáticamente una ilustración única usando IA (Pollinations.ai). Las imágenes se adaptan al contexto narrativo, creando una experiencia visual inmersiva que cambia en cada partida.
 
-### 🎯 Sistema de Decisiones
+### Sistema de Decisiones
 - **Tres opciones por escena**: Cada decisión importa
 - **Consecuencias reales**: Tus elecciones afectan la historia de forma permanente
 - **Múltiples finales**: Victoria, derrota, sacrificio heroico, supervivencia egoísta...
 - **Pistas sutiles**: Lee con atención, los detalles pueden salvarte la vida
 
-### 🎭 Niveles de Dificultad
+### Niveles de Dificultad
 - **NORMAL** 🟢: ~30% de decisiones correctas
 - **DIFÍCIL** 🟠: ~20% de decisiones correctas  
 - **MORTAL** 🔴: ~15% de decisiones correctas (solo para valientes)
 
-### 📱 Diseño Responsivo
+### Diseño Responsivo
 Interfaz oscura y atmosférica que funciona perfectamente en:
 - 💻 Escritorio
 - 📱 Móviles
 - 📲 Tablets
 
-### ⚡ Rendimiento Optimizado
+### Rendimiento Optimizado
 - Sin frameworks pesados en el frontend
 - Carga rápida de historias
 - Generación de imágenes en segundo plano
 - Arquitectura ligera y eficiente
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 **Backend:**
 - Node.js
@@ -82,14 +82,11 @@ Interfaz oscura y atmosférica que funciona perfectamente en:
 
 **IA & Assets:**
 - Pollinations.ai para generación de imágenes
-- Prompts contextuales dinámicos
 
 **Arquitectura:**
 - Historias en formato JSON modular
 - Separación de lógica y contenido
 - Fácil de extender con nuevas historias
-
-## 🚀 Instalación y Uso
 
 ### Requisitos Previos
 - Node.js (v14 o superior)
@@ -140,7 +137,7 @@ escape_room/
 └── package.json
 ```
 
-## 🎮 Cómo Jugar
+## Cómo Jugar
 
 1. **Selecciona una historia** en la pantalla principal
 2. **Lee cuidadosamente** cada escena - los detalles importan
@@ -150,7 +147,7 @@ escape_room/
 
 **Consejo:** No siempre la opción más obvia es la correcta. Presta atención a las pistas sutiles en el texto.
 
-## 🤝 Contribuir
+## Desea Contribuir
 
 ¿Tienes ideas para nuevas historias o mejoras? ¡Las contribuciones son bienvenidas!
 
@@ -160,7 +157,7 @@ escape_room/
 4. Push a la rama (`git push origin feature/nueva-historia`)
 5. Abre un Pull Request
 
-## 📝 Crear Tu Propia Historia
+## Crear Tu Propia Historia
 
 Las historias se definen en archivos JSON. Estructura básica:
 
@@ -184,16 +181,16 @@ Las historias se definen en archivos JSON. Estructura básica:
 }
 ```
 
-## 📜 Licencia
+## Licencia
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
-## 👨‍💻 Autor
+## Autor
 
 **Javier Arteaga Puell**
 - GitHub: [@javierarteagapuell](https://github.com/javierarteagapuell)
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 - Inspirado en los libros clásicos de "Elige tu propia aventura"
 - Imágenes generadas por [Pollinations.ai](https://pollinations.ai)
@@ -201,6 +198,6 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ---
 
-⭐ Si te gusta el proyecto, ¡dale una estrella en GitHub!
+ Si te gusta el proyecto, ¡dale una estrella en GitHub!
 
-🎮 **¿Listo para jugar?** Elige tu historia y que la suerte te acompañe...
+ **¿Listo para jugar?** Elige tu historia y que la suerte te acompañe...
